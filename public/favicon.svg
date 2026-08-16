@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="50%" stop-color="#F5B301" />
+      <stop offset="100%" stop-color="#D49400" />
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0A0" />
+      <stop offset="100%" stop-color="#F5B301" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Outer Hexagon Frame -->
+  <polygon points="250,20 450,135 450,365 250,480 50,365 50,135" fill="none" stroke="url(#goldGrad)" stroke-width="26" stroke-linejoin="round" />
+  
+  <!-- Stylized Geometric W & C letters in Gold -->
+  <!-- Left Side: 'W' geometry -->
+  <path d="M 125,185 L 175,320 L 210,230 L 235,320 L 250,280 L 225,185" fill="url(#goldGrad)" />
+  <path d="M 125,185 L 155,185 L 185,275 L 210,205 L 235,275 L 250,230 L 240,185 L 265,185 L 245,335 L 225,335 L 205,270 L 180,335 L 160,335 Z" fill="url(#goldGlow)" />
+  
+  <!-- Right Side: 'C' geometry framing -->
+  <path d="M 375,185 L 275,185 L 275,225 L 345,225 L 345,275 L 275,275 L 275,315 L 375,315 L 375,345 L 245,345 L 245,155 L 375,155 Z" fill="url(#goldGrad)" />
+  
+  <!-- Center Hexagon Inner Emblem -->
+  <polygon points="250,45 425,145 425,355 250,455 75,355 75,145" fill="none" stroke="url(#goldGrad)" stroke-width="4" opacity="0.3" />
+</svg>

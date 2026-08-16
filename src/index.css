@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* WebCraft Project Design System - Premium Gold & Dynamic Light/Dark Themes */
+
+@layer base {
+  :root {
+    /* Light Theme (Clean Pearl & Gold Luxury) */
+    --background: 40 20% 98%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+
+    /* Gold Primary in Light Mode */
+    --primary: 38 92% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 40 15% 90%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 38 92% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 85%;
+    --input: 40 15% 88%;
+    --ring: 38 92% 48%;
+
+    --radius: 0.75rem;
+
+    /* Custom WebCraft Tokens */
+    --gold: 43 96% 56%;
+    --gold-light: 45 100% 72%;
+    --gold-dark: 38 92% 42%;
+    --charcoal: 0 0% 12%;
+    --charcoal-light: 0 0% 18%;
+    --charcoal-dark: 0 0% 6%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(43 96% 56%), hsl(38 92% 42%));
+    --gradient-gold-shine: linear-gradient(135deg, hsl(45 100% 72%), hsl(43 96% 56%), hsl(38 92% 42%));
+    --gradient-dark: linear-gradient(180deg, hsl(40 20% 96%), hsl(40 20% 92%));
+    --gradient-radial: radial-gradient(ellipse at center, hsl(40 20% 94%) 0%, hsl(40 20% 90%) 70%);
+    
+    /* Shadows */
+    --shadow-gold: 0 4px 20px -5px hsla(38, 92%, 48%, 0.25);
+    --shadow-gold-lg: 0 10px 35px -10px hsla(38, 92%, 48%, 0.35);
+    --shadow-elevation: 0 20px 40px -15px hsla(0, 0%, 0%, 0.1);
+    --shadow-card: 0 4px 20px -5px hsla(0, 0%, 0%, 0.08);
+    
+    /* 3D Effects */
+    --transform-hover: translateY(-8px) scale(1.02);
+    --transform-press: translateY(-2px) scale(0.98);
+
+    --sidebar-background: 40 20% 98%;
+    --sidebar-foreground: 0 0% 12%;
+    --sidebar-primary: 38 92% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 20% 92%;
+    --sidebar-accent-foreground: 0 0% 12%;
+    --sidebar-border: 40 15% 85%;
+    --sidebar-ring: 38 92% 48%;
+  }
+
+  .dark {
+    /* Dark Theme (Signature Obsidian Black & Radiant Gold) */
+    --background: 0 0% 4%;
+    --foreground: 45 10% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 45 10% 95%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 45 10% 95%;
+
+    /* Gold Primary */
+    --primary: 43 96% 56%;
+    --primary-foreground: 0 0% 4%;
+
+    /* Dark Secondary */
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 45 10% 90%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    /* Gold Accent */
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 43 96% 56%;
+
+    /* Custom WebCraft Tokens */
+    --gold: 43 96% 56%;
+    --gold-light: 45 100% 72%;
+    --gold-dark: 40 90% 45%;
+    --charcoal: 0 0% 8%;
+    --charcoal-light: 0 0% 12%;
+    --charcoal-dark: 0 0% 4%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(43 96% 56%), hsl(40 90% 45%));
+    --gradient-gold-shine: linear-gradient(135deg, hsl(45 100% 72%), hsl(43 96% 56%), hsl(40 90% 45%));
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 4%));
+    --gradient-radial: radial-gradient(ellipse at center, hsl(0 0% 12%) 0%, hsl(0 0% 4%) 70%);
+    
+    /* Shadows */
+    --shadow-gold: 0 4px 30px -5px hsla(43, 96%, 56%, 0.3);
+    --shadow-gold-lg: 0 10px 50px -10px hsla(43, 96%, 56%, 0.4);
+    --shadow-elevation: 0 20px 60px -15px hsla(0, 0%, 0%, 0.5);
+    --shadow-card: 0 4px 20px -5px hsla(0, 0%, 0%, 0.4);
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 45 10% 95%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 45 10% 95%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 43 96% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Gold Text Gradient */
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #FFDF00, #F5B301, #D48800);
+  }
+
+  .dark .text-gold-gradient {
+    background-image: linear-gradient(135deg, hsl(45 100% 72%), hsl(43 96% 56%), hsl(40 90% 45%));
+  }
+
+  /* 3D Card Effect */
+  .card-3d {
+    @apply relative transition-all duration-500 ease-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .card-3d:hover {
+    transform: translateY(-8px) rotateX(2deg);
+    box-shadow: 0 25px 50px -12px hsla(0, 0%, 0%, 0.5), 
+                0 0 40px -10px hsla(43, 96%, 56%, 0.2);
+  }
+
+  /* Gold Glow Button */
+  .btn-gold-glow {
+    @apply relative overflow-hidden bg-[#F5B301] text-black font-extrabold shadow-md transition-all duration-300;
+    box-shadow: 0 0 20px -5px hsla(43, 96%, 56%, 0.5);
+  }
+
+  .btn-gold-glow:hover {
+    @apply bg-[#FFE066] scale-[1.02];
+    box-shadow: 0 0 35px -5px hsla(43, 96%, 56%, 0.7);
+  }
+
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Glow Pulse */
+  .glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px -5px hsla(43, 96%, 56%, 0.3); }
+    50% { box-shadow: 0 0 40px -5px hsla(43, 96%, 56%, 0.6); }
+  }
+
+  /* Section Divider */
+  .section-divider {
+    @apply w-20 h-1 mx-auto rounded-full;
+    background: linear-gradient(90deg, transparent, hsl(43 96% 56%), transparent);
+  }
+
+  /* Glass Effect */
+  .glass {
+    @apply backdrop-blur-xl border transition-colors duration-300;
+    background: rgba(8, 8, 10, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  html:not(.dark) .glass {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+}
