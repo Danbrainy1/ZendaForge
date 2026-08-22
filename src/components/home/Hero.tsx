@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Floating3DShapes } from "@/components/3d/Floating3DShapes";
 import { GlowingOrb } from "@/components/3d/GlowingOrb";
+import { WebCraftEmblemIcon } from "@/components/common/BrandLogo";
 import { Interactive3DDeviceShowcase } from "./Interactive3DDeviceShowcase";
 
 export const Hero = () => {
@@ -74,11 +75,9 @@ export const Hero = () => {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#F5B301]/40 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(245,179,1,0.15)] dark:shadow-[0_0_20px_rgba(245,179,1,0.2)]"
           >
-            <img 
-              src="/webcraft-emblem-transparent.png" 
-              alt="Web-Craft" 
-              className="w-5 h-5 object-contain filter drop-shadow-[0_0_8px_rgba(245,179,1,0.6)]" 
-            />
+            <div className="w-5 h-5 flex items-center justify-center shrink-0">
+              <WebCraftEmblemIcon className="w-full h-full filter drop-shadow-[0_0_8px_rgba(245,179,1,0.6)]" />
+            </div>
             <span className="text-xs md:text-sm font-extrabold uppercase tracking-widest text-amber-700 dark:text-[#F5B301]">
               WEB-CRAFT PROJECTS • MODERN SOLUTIONS
             </span>

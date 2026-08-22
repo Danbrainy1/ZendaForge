@@ -10,13 +10,25 @@ interface BrandLogoProps {
   darkTheme?: boolean;
 }
 
+export const WebCraftEmblemIcon: React.FC<{ className?: string; size?: number | string }> = ({
+  className = "w-full h-full",
+}) => (
+  <div className={`relative flex items-center justify-center ${className}`}>
+    <img
+      src="/webcraft-emblem.png"
+      alt="Web-Craft Projects Emblem"
+      className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(245,179,1,0.5)]"
+      loading="eager"
+    />
+  </div>
+);
+
 export const BrandLogo: React.FC<BrandLogoProps> = ({
   size = "md",
   showTagline = true,
   animated = true,
   className = "",
   variant = "full",
-  darkTheme = true,
 }) => {
   const iconSizes = {
     sm: "w-9 h-9 sm:w-10 sm:h-10",
@@ -48,23 +60,17 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
 
   const iconElement = (
     <motion.div
-      whileHover={animated ? { scale: 1.06, rotate: 2 } : undefined}
+      whileHover={animated ? { scale: 1.08, rotate: 2 } : undefined}
       whileTap={animated ? { scale: 0.96 } : undefined}
       className={`relative flex items-center justify-center flex-shrink-0 ${iconSizes[size]}`}
     >
       {/* Subtle Golden Glow aura behind the emblem */}
-      <div className="absolute inset-0 bg-[#F5B301]/20 rounded-full blur-md pointer-events-none scale-110" />
-      
-      <img
-        src="/webcraft-emblem-transparent.png"
-        alt="Web-Craft Projects Emblem"
-        className="relative z-10 w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(245,179,1,0.5)]"
-        onError={(e) => {
-          // Fallback if image fails
-          e.currentTarget.onerror = null;
-          e.currentTarget.src = "/favicon.png";
-        }}
-      />
+      <div className="absolute inset-0 bg-[#F5B301]/25 rounded-full blur-md pointer-events-none scale-110" />
+
+      {/* Crisp Vector Emblem */}
+      <div className="relative z-10 w-full h-full flex items-center justify-center filter drop-shadow-[0_0_12px_rgba(245,179,1,0.5)]">
+        <WebCraftEmblemIcon className="w-full h-full object-contain" />
+      </div>
     </motion.div>
   );
 
@@ -79,23 +85,23 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       <div className="flex flex-col justify-center text-left">
         {/* Main Title: WEB-CRAFT */}
         <div className={`font-black leading-tight tracking-tight flex items-baseline gap-0.5 ${titleSizes[size]}`}>
-          <span className="text-zinc-900 dark:text-white">WEB-</span>
+          <span className="text-zinc-900 dark:text-white transition-colors duration-300">WEB-</span>
           <span className="text-[#F5B301] drop-shadow-[0_0_12px_rgba(245,179,1,0.4)]">CRAFT</span>
         </div>
 
         {/* Subtitle: P R O J E C T S */}
         <div
-          className={`font-extrabold uppercase mt-0.5 text-zinc-600 dark:text-zinc-300 ${subtitleSizes[size]}`}
+          className={`font-extrabold uppercase mt-0.5 text-zinc-600 dark:text-zinc-300 transition-colors duration-300 ${subtitleSizes[size]}`}
         >
           PROJECTS
         </div>
 
         {/* Tagline: WE DESIGN. WE BUILD. WE EMPOWER. */}
         {showTagline && size !== "sm" && (
-          <div className="flex items-center gap-1.5 mt-1 opacity-90">
+          <div className="flex items-center gap-1.5 mt-1 opacity-95">
             <div className="h-[1.5px] w-2 sm:w-3 bg-[#F5B301] rounded-full" />
             <span
-              className={`font-bold text-amber-700 dark:text-[#F5B301] uppercase whitespace-nowrap ${taglineSizes[size]}`}
+              className={`font-bold text-amber-700 dark:text-[#F5B301] uppercase whitespace-nowrap transition-colors duration-300 ${taglineSizes[size]}`}
             >
               WE DESIGN. WE BUILD. WE EMPOWER.
             </span>
