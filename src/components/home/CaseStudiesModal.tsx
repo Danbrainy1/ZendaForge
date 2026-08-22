@@ -145,6 +145,11 @@ export const CaseStudiesModal: React.FC<CaseStudiesModalProps> = ({ project, onC
               <img
                 src={project.image}
                 alt={project.title}
+                onError={(e) => {
+                  if (project.fallbackImage && !e.currentTarget.src.includes(project.fallbackImage)) {
+                    e.currentTarget.src = project.fallbackImage;
+                  }
+                }}
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute bottom-3 left-3">

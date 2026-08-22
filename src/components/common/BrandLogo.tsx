@@ -37,18 +37,18 @@ export const SvgEmblemVector: React.FC<{ className?: string }> = ({ className = 
 export const WebCraftEmblemIcon: React.FC<{ className?: string; size?: number | string }> = ({
   className = "w-full h-full",
 }) => {
-  const [hasError, setHasError] = useState(false);
+  const [useImg, setUseImg] = useState(true);
 
   return (
     <div className={`relative flex items-center justify-center ${className}`}>
-      {!hasError ? (
+      {useImg ? (
         <img
           src={webcraftEmblemImg}
           alt="Web-Craft Projects Emblem"
           className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(245,179,1,0.5)]"
           loading="eager"
           decoding="async"
-          onError={() => setHasError(true)}
+          onError={() => setUseImg(false)}
         />
       ) : (
         <SvgEmblemVector className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(245,179,1,0.5)]" />
