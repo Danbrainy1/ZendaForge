@@ -147,7 +147,13 @@ const Portfolio = () => {
                             src={project.image}
                             alt={`${project.title} live website screenshot`}
                             loading="lazy"
-                            onError={() => handleImageError(project.id)}
+                            onError={(e) => {
+                              if (project.fallbackImage && !e.currentTarget.src.includes(project.fallbackImage)) {
+                                e.currentTarget.src = project.fallbackImage;
+                              } else {
+                                handleImageError(project.id);
+                              }
+                            }}
                             className="w-full h-full object-cover object-top group-hover:scale-105 group-hover:brightness-105 transition-all duration-700 ease-out"
                           />
                         ) : (

@@ -145,11 +145,17 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
     @apply bg-background text-foreground antialiased transition-colors duration-300;
     font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -229,5 +235,14 @@
   html:not(.dark) .glass {
     background: rgba(255, 255, 255, 0.88);
     border-color: rgba(0, 0, 0, 0.08);
+  }
+
+  /* No Scrollbar Utility for smooth touch swipes */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

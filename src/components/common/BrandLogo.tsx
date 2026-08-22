@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import webcraftEmblemImg from "@/assets/webcraft-emblem.png";
+import webcraftLogoDarkImg from "@/assets/webcraft-logo-dark.png";
+import webcraftFullLogoImg from "@/assets/webcraft-full-logo.png";
 
 interface BrandLogoProps {
   size?: "sm" | "md" | "lg" | "xl";
@@ -10,18 +13,50 @@ interface BrandLogoProps {
   darkTheme?: boolean;
 }
 
+// Crisp Vector SVG Fallback Component for Emblem
+export const SvgEmblemVector: React.FC<{ className?: string }> = ({ className = "w-full h-full" }) => (
+  <svg viewBox="160 160 396 396" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <defs>
+      <linearGradient id="blGoldGrad" x1="160" y1="160" x2="556" y2="556" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#FFF5C2" />
+        <stop offset="25%" stopColor="#FFD426" />
+        <stop offset="65%" stopColor="#F5B301" />
+        <stop offset="100%" stopColor="#B87700" />
+      </linearGradient>
+      <radialGradient id="blGoldGlow" cx="358" cy="358" r="190" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#F5B301" stopOpacity="0.35" />
+        <stop offset="100%" stopColor="#F5B301" stopOpacity="0" />
+      </radialGradient>
+    </defs>
+    <circle cx="358" cy="358" r="185" fill="url(#blGoldGlow)" />
+    <path
+      d="M508.749 317.399C516.777 287.314 508.991 253.884 485.389 230.282C461.788 206.681 428.36 198.895 398.273 206.923C376.231 184.928 343.39 174.956 311.148 183.596C278.906 192.234 255.45 217.292 247.36 247.361C217.291 255.451 192.233 278.91 183.595 311.149C174.957 343.391 184.927 376.232 206.924 398.274C198.896 428.359 206.683 461.789 230.284 485.391C253.885 508.992 287.313 516.779 317.401 508.75C339.442 530.745 372.286 540.717 404.525 532.079C436.767 523.441 460.223 498.384 468.313 468.315C498.383 460.224 523.44 436.766 532.078 404.526C540.716 372.285 530.747 339.443 508.749 317.402V317.399ZM470.899 244.776C486.892 260.77 493.488 282.601 490.687 303.412L415.577 260.046C412.411 258.218 408.509 258.218 405.345 260.046L317.401 310.82V277.526C317.401 275.191 318.652 273.005 320.676 271.837L387.644 233.174C414.178 218.353 448.346 222.223 470.901 244.776H470.899ZM357.837 311.144L398.275 334.491V381.185L357.837 404.532L317.398 381.185V334.491L357.837 311.144ZM264.776 269.693C265.207 239.305 285.644 211.649 316.453 203.393C338.3 197.54 360.505 202.744 377.127 215.573L302.014 258.937C298.848 260.764 296.898 264.144 296.898 267.798V369.346L268.065 352.699C266.043 351.531 264.776 349.353 264.776 347.017V269.691V269.693ZM203.391 316.454C209.244 294.608 224.854 277.978 244.276 269.999V356.73C244.276 360.384 246.226 363.763 249.392 365.591L337.337 416.365L308.503 433.013C306.481 434.181 303.961 434.188 301.939 433.02L234.971 394.357C208.868 378.789 195.138 347.261 203.391 316.454ZM244.775 470.9C228.781 454.906 222.186 433.075 224.986 412.264L300.096 455.63C303.263 457.457 307.164 457.457 310.328 455.63L398.273 404.856V438.149C398.273 440.485 397.022 442.671 394.997 443.839L328.029 482.502C301.495 497.322 267.327 493.452 244.772 470.9H244.775ZM450.897 445.982C450.466 476.371 430.029 504.027 399.22 512.283C377.373 518.136 355.168 512.932 338.547 500.102L413.659 456.738C416.826 454.911 418.775 451.532 418.775 447.877V346.329L447.609 362.977C449.631 364.145 450.897 366.323 450.897 368.659V445.985V445.982ZM512.282 399.221C506.429 421.068 490.819 437.697 471.397 445.676V358.946C471.397 355.292 469.448 351.912 466.281 350.085L378.336 299.311L407.17 282.663C409.192 281.495 411.712 281.487 413.734 282.655L480.702 321.318C506.805 336.887 520.536 368.415 512.282 399.221Z"
+      fill="url(#blGoldGrad)"
+    />
+  </svg>
+);
+
 export const WebCraftEmblemIcon: React.FC<{ className?: string; size?: number | string }> = ({
   className = "w-full h-full",
-}) => (
-  <div className={`relative flex items-center justify-center ${className}`}>
-    <img
-      src="/webcraft-emblem.png"
-      alt="Web-Craft Projects Emblem"
-      className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(245,179,1,0.5)]"
-      loading="eager"
-    />
-  </div>
-);
+}) => {
+  const [hasError, setHasError] = useState(false);
+
+  return (
+    <div className={`relative flex items-center justify-center ${className}`}>
+      {!hasError ? (
+        <img
+          src={webcraftEmblemImg}
+          alt="Web-Craft Projects Emblem"
+          className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(245,179,1,0.5)]"
+          loading="eager"
+          onError={() => setHasError(true)}
+        />
+      ) : (
+        <SvgEmblemVector className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(245,179,1,0.5)]" />
+      )}
+    </div>
+  );
+};
 
 export const BrandLogo: React.FC<BrandLogoProps> = ({
   size = "md",
@@ -30,6 +65,9 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   className = "",
   variant = "full",
 }) => {
+  const [imgErrorDark, setImgErrorDark] = useState(false);
+  const [imgErrorLight, setImgErrorLight] = useState(false);
+
   const iconSizes = {
     sm: "w-9 h-9 sm:w-10 sm:h-10",
     md: "w-11 h-11 sm:w-12 sm:h-12",
@@ -69,20 +107,69 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       whileHover={animated ? { scale: 1.02 } : undefined}
       className={`inline-flex items-center select-none ${className}`}
     >
-      {/* Dark theme logo (White text + Gold emblem from WEBCRAFT-LOGO) */}
-      <img
-        src="/webcraft-logo-dark.png"
-        alt="Web-Craft Projects"
-        className={`hidden dark:block w-auto ${fullLogoHeights[size]} object-contain filter drop-shadow-[0_0_10px_rgba(245,179,1,0.3)]`}
-        loading="eager"
-      />
-      {/* Light theme logo (Dark text + Gold emblem from WEBCRAFT-LOGO) */}
-      <img
-        src="/webcraft-full-logo.png"
-        alt="Web-Craft Projects"
-        className={`block dark:hidden w-auto ${fullLogoHeights[size]} object-contain filter drop-shadow-[0_0_8px_rgba(245,179,1,0.25)]`}
-        loading="eager"
-      />
+      {/* Dark theme logo */}
+      <div className="hidden dark:flex items-center">
+        {!imgErrorDark ? (
+          <img
+            src={webcraftLogoDarkImg}
+            alt="Web-Craft Projects"
+            className={`w-auto ${fullLogoHeights[size]} object-contain filter drop-shadow-[0_0_10px_rgba(245,179,1,0.3)]`}
+            loading="eager"
+            onError={() => setImgErrorDark(true)}
+          />
+        ) : (
+          <div className="flex items-center gap-2.5">
+            <div className={iconSizes[size]}>
+              <SvgEmblemVector />
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="text-base sm:text-lg font-black tracking-tight text-white leading-none">
+                WEB-<span className="text-[#F5B301]">CRAFT</span>
+              </span>
+              <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400 mt-0.5">
+                PROJECTS
+              </span>
+              {showTagline && (
+                <span className="text-[8px] font-bold text-[#F5B301] tracking-wider mt-0.5 hidden sm:inline">
+                  WE DESIGN. WE BUILD. WE EMPOWER.
+                </span>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Light theme logo */}
+      <div className="flex dark:hidden items-center">
+        {!imgErrorLight ? (
+          <img
+            src={webcraftFullLogoImg}
+            alt="Web-Craft Projects"
+            className={`w-auto ${fullLogoHeights[size]} object-contain filter drop-shadow-[0_0_8px_rgba(245,179,1,0.25)]`}
+            loading="eager"
+            onError={() => setImgErrorLight(true)}
+          />
+        ) : (
+          <div className="flex items-center gap-2.5">
+            <div className={iconSizes[size]}>
+              <SvgEmblemVector />
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="text-base sm:text-lg font-black tracking-tight text-zinc-950 leading-none">
+                WEB-<span className="text-[#F5B301]">CRAFT</span>
+              </span>
+              <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.25em] text-zinc-600 mt-0.5">
+                PROJECTS
+              </span>
+              {showTagline && (
+                <span className="text-[8px] font-bold text-amber-600 tracking-wider mt-0.5 hidden sm:inline">
+                  WE DESIGN. WE BUILD. WE EMPOWER.
+                </span>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
     </motion.div>
   );
 };

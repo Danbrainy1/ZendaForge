@@ -185,6 +185,11 @@ export const InteractiveDevicePreview: React.FC = () => {
                   <img
                     src={currentProject.image}
                     alt={`${currentProject.title} mockup on ${device}`}
+                    onError={(e) => {
+                      if (currentProject.fallbackImage && e.currentTarget.src !== currentProject.fallbackImage) {
+                        e.currentTarget.src = currentProject.fallbackImage;
+                      }
+                    }}
                     className="w-full h-full object-cover object-top"
                   />
                 ) : (

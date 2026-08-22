@@ -42,70 +42,70 @@ export const Interactive3DDeviceShowcase: React.FC = () => {
       onMouseLeave={handleMouseLeave}
     >
       {/* Device View Controller Tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mb-8 relative z-20">
-        <div className="flex items-center gap-1 p-1 bg-white/90 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 rounded-2xl backdrop-blur-xl shadow-lg dark:shadow-2xl">
+      <div className="flex flex-wrap items-center justify-center gap-2 mb-6 sm:mb-8 relative z-20 px-2">
+        <div className="flex items-center gap-1 p-1 bg-white/90 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 rounded-2xl backdrop-blur-xl shadow-lg dark:shadow-2xl overflow-x-auto max-w-full no-scrollbar">
           <button
             onClick={() => setActiveDevice("all")}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
               activeDevice === "all"
                 ? "bg-[#F5B301] text-black shadow-[0_0_15px_rgba(245,179,1,0.5)] font-black"
                 : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
             }`}
           >
-            <Layers size={14} />
+            <Layers size={13} />
             <span>3D Multi-Device</span>
           </button>
           <button
             onClick={() => setActiveDevice("laptop")}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
               activeDevice === "laptop"
                 ? "bg-[#F5B301] text-black shadow-[0_0_15px_rgba(245,179,1,0.5)] font-black"
                 : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
             }`}
           >
-            <Laptop size={14} />
-            <span>Laptop View</span>
+            <Laptop size={13} />
+            <span>Laptop</span>
           </button>
           <button
             onClick={() => setActiveDevice("tablet")}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
               activeDevice === "tablet"
                 ? "bg-[#F5B301] text-black shadow-[0_0_15px_rgba(245,179,1,0.5)] font-black"
                 : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
             }`}
           >
-            <Tablet size={14} />
-            <span>Tablet View</span>
+            <Tablet size={13} />
+            <span>Tablet</span>
           </button>
           <button
             onClick={() => setActiveDevice("mobile")}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
               activeDevice === "mobile"
                 ? "bg-[#F5B301] text-black shadow-[0_0_15px_rgba(245,179,1,0.5)] font-black"
                 : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
             }`}
           >
-            <Smartphone size={14} />
-            <span>Mobile View</span>
+            <Smartphone size={13} />
+            <span>Mobile</span>
           </button>
         </div>
 
         {/* Live UI Switcher */}
-        <div className="hidden sm:flex items-center gap-1 p-1 bg-white/90 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 rounded-2xl backdrop-blur-xl shadow-lg dark:shadow-2xl">
+        <div className="flex items-center gap-1 p-1 bg-white/90 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 rounded-2xl backdrop-blur-xl shadow-lg dark:shadow-2xl overflow-x-auto max-w-full no-scrollbar">
           {(["home", "services", "ecommerce", "portal"] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveScreenTab(tab)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-medium uppercase tracking-wider transition-all ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-medium uppercase tracking-wider whitespace-nowrap transition-all ${
                 activeScreenTab === tab
                   ? "bg-zinc-100 dark:bg-zinc-800 text-amber-700 dark:text-[#F5B301] font-bold border border-amber-500/40 dark:border-[#F5B301]/40 shadow-sm"
                   : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200"
               }`}
             >
-              {tab === "home" && "Modern Agency"}
+              {tab === "home" && "Agency"}
               {tab === "services" && "Services"}
-              {tab === "ecommerce" && "E-Commerce"}
-              {tab === "portal" && "School Portal"}
+              {tab === "ecommerce" && "Shop"}
+              {tab === "portal" && "Portal"}
             </button>
           ))}
         </div>
@@ -134,38 +134,38 @@ export const Interactive3DDeviceShowcase: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ 
               opacity: 1, 
-              scale: activeDevice === "laptop" ? 1.05 : 1, 
+              scale: activeDevice === "laptop" ? 1.03 : 1, 
               y: 0,
-              x: activeDevice === "all" ? -35 : 0,
+              x: activeDevice === "all" && typeof window !== "undefined" && window.innerWidth >= 1024 ? -35 : 0,
               z: 40 
             }}
             transition={{ duration: 0.6, type: "spring" }}
             style={{ transformStyle: "preserve-3d" }}
-            className="relative z-10 w-full max-w-[620px] filter drop-shadow-[0_25px_45px_rgba(0,0,0,0.85)]"
+            className="relative z-10 w-full max-w-[92vw] sm:max-w-[540px] md:max-w-[620px] filter drop-shadow-[0_25px_45px_rgba(0,0,0,0.85)]"
           >
             {/* Laptop Screen Bezel */}
-            <div className="relative rounded-t-2xl bg-zinc-950 border-4 border-zinc-700 shadow-2xl overflow-hidden p-2">
+            <div className="relative rounded-t-2xl bg-zinc-950 border-2 sm:border-4 border-zinc-700 shadow-2xl overflow-hidden p-1.5 sm:p-2">
               {/* WebCam */}
               <div className="absolute top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-zinc-800 border border-zinc-600 flex items-center justify-center">
                 <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
               </div>
 
               {/* Browser Bar */}
-              <div className="mt-1 mb-2 px-3 py-1.5 rounded-lg bg-zinc-900 flex items-center justify-between border border-zinc-800">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+              <div className="mt-1 mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-zinc-900 flex items-center justify-between border border-zinc-800">
+                <div className="flex items-center gap-1 sm:gap-1.5">
+                  <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-red-500/80" />
+                  <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-yellow-500/80" />
+                  <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-green-500/80" />
                 </div>
-                <div className="text-[11px] font-mono text-zinc-400 bg-zinc-950 px-4 py-0.5 rounded-md border border-zinc-800 flex items-center gap-1.5">
-                  <span className="text-[#F5B301] text-[10px]">🔒</span>
-                  <span>webcraftprojects.com/preview</span>
+                <div className="text-[10px] sm:text-[11px] font-mono text-zinc-400 bg-zinc-950 px-2 sm:px-4 py-0.5 rounded-md border border-zinc-800 flex items-center gap-1.5 max-w-[170px] sm:max-w-none truncate">
+                  <span className="text-[#F5B301] text-[9px] sm:text-[10px]">🔒</span>
+                  <span className="truncate">webcraftprojects.com</span>
                 </div>
-                <div className="text-[10px] text-zinc-500 font-bold">100% RESPONSIVE</div>
+                <div className="text-[9px] sm:text-[10px] text-zinc-500 font-bold hidden sm:inline">100% RESPONSIVE</div>
               </div>
 
               {/* Screen Content Window */}
-              <div className="rounded-lg bg-[#0c0c0e] border border-zinc-800/80 p-5 min-h-[280px] overflow-hidden relative">
+              <div className="rounded-lg bg-[#0c0c0e] border border-zinc-800/80 p-3 sm:p-5 min-h-[250px] sm:min-h-[280px] overflow-hidden relative">
                 {/* Gold Hexagon Floating Watermark */}
                 <div className="absolute -right-8 -top-8 w-40 h-40 opacity-10 pointer-events-none">
                   <svg viewBox="0 0 100 100" className="w-full h-full text-[#F5B301]" fill="currentColor">

@@ -1,3 +1,11 @@
+// Import project screenshots directly so Vite guarantees bundling with hashed URLs
+import chefGreenImg from "@/assets/projects/chef-green.png";
+import realityAcademyImg from "@/assets/projects/reality-academy.png";
+import ourRomanticJourneyImg from "@/assets/projects/our-romantic-journey.png";
+import aureliaHotelsImg from "@/assets/projects/aurelia-hotels.png";
+import sagePegasusImg from "@/assets/projects/sage-pegasus.png";
+import adorableKitchenImg from "@/assets/projects/adorable-kitchen.png";
+
 export interface RealProject {
   id: string;
   title: string;
@@ -7,6 +15,7 @@ export interface RealProject {
   description: string;
   liveUrl: string;
   image: string;
+  fallbackImage?: string;
   features: string[];
   metrics: string;
   metricLabel: string;
@@ -26,7 +35,8 @@ export const realProjectsList: RealProject[] = [
     category: "food",
     description: "An immersive digital dining and gourmet chef platform featuring curated recipes, interactive menus, culinary story experiences, and direct catering booking.",
     liveUrl: "https://chef-green-s-digital-kitchen-iyiz.vercel.app/",
-    image: "/projects/chef-green.png",
+    image: chefGreenImg,
+    fallbackImage: "/projects/chef-green.png",
     features: [
       "Interactive Recipe & Menu Showcase",
       "Private Chef & Catering Booking Engine",
@@ -49,7 +59,8 @@ export const realProjectsList: RealProject[] = [
     category: "education",
     description: "Comprehensive institutional website and educational hub designed for student admissions, academic curriculum exploration, faculty showcases, and campus events.",
     liveUrl: "https://reality-academy-website.vercel.app/",
-    image: "/projects/reality-academy.png",
+    image: realityAcademyImg,
+    fallbackImage: "/projects/reality-academy.png",
     features: [
       "Student Admissions & Enrollment Form",
       "Academic Programs & Curriculum Directory",
@@ -72,7 +83,8 @@ export const realProjectsList: RealProject[] = [
     category: "interactive",
     description: "A bespoke, highly emotional interactive digital experience celebrating a couple's journey with timeline milestones, photo memory reels, and love story chronicle.",
     liveUrl: "https://our-romantic-journey-1nby.vercel.app/",
-    image: "/projects/our-romantic-journey.png",
+    image: ourRomanticJourneyImg,
+    fallbackImage: "/projects/our-romantic-journey.png",
     features: [
       "Chronological Love Story Timeline",
       "Interactive Memories & Photo Gallery",
@@ -95,7 +107,8 @@ export const realProjectsList: RealProject[] = [
     category: "hospitality",
     description: "Prestigious boutique hotel website featuring luxury suite catalogs, room reservation inquiry workflows, premium amenities showcases, and virtual concierge.",
     liveUrl: "https://aurelia-hotels.netlify.app/",
-    image: "/projects/aurelia-hotels.png",
+    image: aureliaHotelsImg,
+    fallbackImage: "/projects/aurelia-hotels.png",
     features: [
       "Luxury Suite & Room Showcase",
       "Online Booking & Reservation Inquiries",
@@ -118,7 +131,8 @@ export const realProjectsList: RealProject[] = [
     category: "business",
     description: "High-performance corporate web platform engineered for brand authority, interactive service presentation, and rapid customer lead acquisition.",
     liveUrl: "https://sage-pegasus-729da0.netlify.app/",
-    image: "/projects/sage-pegasus.png",
+    image: sagePegasusImg,
+    fallbackImage: "/projects/sage-pegasus.png",
     features: [
       "Ultra-Fast Static Page Generation",
       "Modern Conversion-Optimized Lead Funnel",
@@ -141,7 +155,8 @@ export const realProjectsList: RealProject[] = [
     category: "food",
     description: "Mouth-watering restaurant and kitchen website offering dynamic food menus, online meal orders, customer testimonials, and direct WhatsApp dispatch coordination.",
     liveUrl: "https://adorable-kitchen.netlify.app/",
-    image: "/projects/adorable-kitchen.png",
+    image: adorableKitchenImg,
+    fallbackImage: "/projects/adorable-kitchen.png",
     features: [
       "Digital Menu with Instant Ordering",
       "WhatsApp & Direct Order Routing",
