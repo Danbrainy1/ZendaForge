@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import webcraftEmblemImg from "@/assets/webcraft-emblem.png";
-import webcraftLogoDarkImg from "@/assets/webcraft-logo-dark.png";
-import webcraftFullLogoImg from "@/assets/webcraft-full-logo.png";
 
 interface BrandLogoProps {
   size?: "sm" | "md" | "lg" | "xl";
@@ -49,6 +47,7 @@ export const WebCraftEmblemIcon: React.FC<{ className?: string; size?: number | 
           alt="Web-Craft Projects Emblem"
           className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(245,179,1,0.5)]"
           loading="eager"
+          decoding="async"
           onError={() => setHasError(true)}
         />
       ) : (
@@ -65,21 +64,32 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   className = "",
   variant = "full",
 }) => {
-  const [imgErrorDark, setImgErrorDark] = useState(false);
-  const [imgErrorLight, setImgErrorLight] = useState(false);
-
   const iconSizes = {
-    sm: "w-9 h-9 sm:w-10 sm:h-10",
-    md: "w-11 h-11 sm:w-12 sm:h-12",
-    lg: "w-14 h-14 sm:w-16 sm:h-16",
-    xl: "w-20 h-20 sm:w-24 sm:h-24",
+    sm: "w-8 h-8 sm:w-9 sm:h-9",
+    md: "w-10 h-10 sm:w-11 sm:h-11",
+    lg: "w-13 h-13 sm:w-14 sm:h-14",
+    xl: "w-16 h-16 sm:w-20 sm:h-20",
   };
 
-  const fullLogoHeights = {
-    sm: "h-8 sm:h-9",
-    md: "h-10 sm:h-12",
-    lg: "h-14 sm:h-16",
-    xl: "h-20 sm:h-24",
+  const titleSizes = {
+    sm: "text-sm sm:text-base",
+    md: "text-base sm:text-lg",
+    lg: "text-xl sm:text-2xl",
+    xl: "text-2xl sm:text-3xl",
+  };
+
+  const subSizes = {
+    sm: "text-[8px] sm:text-[9px]",
+    md: "text-[9px] sm:text-[10px]",
+    lg: "text-[11px] sm:text-xs",
+    xl: "text-xs sm:text-sm",
+  };
+
+  const taglineSizes = {
+    sm: "text-[7px] sm:text-[8px]",
+    md: "text-[8px] sm:text-[9px]",
+    lg: "text-[9px] sm:text-[10px]",
+    xl: "text-[10px] sm:text-xs",
   };
 
   const iconElement = (
@@ -105,68 +115,23 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   return (
     <motion.div
       whileHover={animated ? { scale: 1.02 } : undefined}
-      className={`inline-flex items-center select-none ${className}`}
+      className={`inline-flex items-center gap-2.5 sm:gap-3 select-none ${className}`}
     >
-      {/* Dark theme logo */}
-      <div className="hidden dark:flex items-center">
-        {!imgErrorDark ? (
-          <img
-            src={webcraftLogoDarkImg}
-            alt="Web-Craft Projects"
-            className={`w-auto ${fullLogoHeights[size]} object-contain filter drop-shadow-[0_0_10px_rgba(245,179,1,0.3)]`}
-            loading="eager"
-            onError={() => setImgErrorDark(true)}
-          />
-        ) : (
-          <div className="flex items-center gap-2.5">
-            <div className={iconSizes[size]}>
-              <SvgEmblemVector />
-            </div>
-            <div className="flex flex-col text-left">
-              <span className="text-base sm:text-lg font-black tracking-tight text-white leading-none">
-                WEB-<span className="text-[#F5B301]">CRAFT</span>
-              </span>
-              <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400 mt-0.5">
-                PROJECTS
-              </span>
-              {showTagline && (
-                <span className="text-[8px] font-bold text-[#F5B301] tracking-wider mt-0.5 hidden sm:inline">
-                  WE DESIGN. WE BUILD. WE EMPOWER.
-                </span>
-              )}
-            </div>
-          </div>
-        )}
-      </div>
+      {iconElement}
+      
+      <div className="flex flex-col text-left justify-center leading-none">
+        <div className={`font-black tracking-tight ${titleSizes[size]} text-zinc-950 dark:text-white flex items-center`}>
+          <span>WEB-</span>
+          <span className="text-[#F5B301] drop-shadow-[0_0_8px_rgba(245,179,1,0.4)]">CRAFT</span>
+        </div>
+        
+        <div className={`font-black uppercase tracking-[0.26em] text-zinc-500 dark:text-zinc-400 ${subSizes[size]} mt-0.5`}>
+          PROJECTS
+        </div>
 
-      {/* Light theme logo */}
-      <div className="flex dark:hidden items-center">
-        {!imgErrorLight ? (
-          <img
-            src={webcraftFullLogoImg}
-            alt="Web-Craft Projects"
-            className={`w-auto ${fullLogoHeights[size]} object-contain filter drop-shadow-[0_0_8px_rgba(245,179,1,0.25)]`}
-            loading="eager"
-            onError={() => setImgErrorLight(true)}
-          />
-        ) : (
-          <div className="flex items-center gap-2.5">
-            <div className={iconSizes[size]}>
-              <SvgEmblemVector />
-            </div>
-            <div className="flex flex-col text-left">
-              <span className="text-base sm:text-lg font-black tracking-tight text-zinc-950 leading-none">
-                WEB-<span className="text-[#F5B301]">CRAFT</span>
-              </span>
-              <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.25em] text-zinc-600 mt-0.5">
-                PROJECTS
-              </span>
-              {showTagline && (
-                <span className="text-[8px] font-bold text-amber-600 tracking-wider mt-0.5 hidden sm:inline">
-                  WE DESIGN. WE BUILD. WE EMPOWER.
-                </span>
-              )}
-            </div>
+        {showTagline && (
+          <div className={`font-bold tracking-wider text-amber-700 dark:text-[#F5B301] ${taglineSizes[size]} mt-0.5 whitespace-nowrap hidden sm:inline`}>
+            WE DESIGN. WE BUILD. WE EMPOWER.
           </div>
         )}
       </div>
