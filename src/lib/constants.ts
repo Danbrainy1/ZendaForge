@@ -6,7 +6,7 @@ export const BRAND = {
   phone: "+234 814 272 0498",
   phoneRaw: "+2348142720498",
   whatsappNumber: "2348142720498",
-  email: "webcraftprojects@gmail.com",
+  email: "webcraftprojects1@gmail.com",
   website: "www.webcraftprojects.com",
   websiteUrl: "https://www.webcraftprojects.com",
   logoUrl: "/WEBCRAFT-LOGO.png",

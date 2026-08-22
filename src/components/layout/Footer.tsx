@@ -107,13 +107,13 @@ export const Footer = () => {
               </a>
 
               <a 
-                href="mailto:webcraftprojects@gmail.com"
+                href="mailto:webcraftprojects1@gmail.com"
                 className="flex items-center gap-3 text-sm text-zinc-800 dark:text-zinc-200 hover:text-amber-600 dark:hover:text-[#F5B301] transition-colors"
               >
                 <div className="w-7 h-7 rounded-lg bg-amber-500/10 dark:bg-[#F5B301]/10 flex items-center justify-center text-amber-600 dark:text-[#F5B301] shrink-0">
                   <Mail size={14} />
                 </div>
-                <span className="font-semibold">webcraftprojects@gmail.com</span>
+                <span className="font-semibold">webcraftprojects1@gmail.com</span>
               </a>
 
               <div className="flex items-center gap-3 text-sm text-zinc-700 dark:text-zinc-200">

@@ -31,8 +31,8 @@ const officialContactInfo = [
   {
     icon: Mail,
     label: "Official Email",
-    value: "webcraftprojects@gmail.com",
-    href: "mailto:webcraftprojects@gmail.com",
+    value: "webcraftprojects1@gmail.com",
+    href: "mailto:webcraftprojects1@gmail.com",
     subtext: "Average response within 1 hour",
   },
   {
