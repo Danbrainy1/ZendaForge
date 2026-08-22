@@ -13,9 +13,11 @@ import {
   ShieldCheck,
   Eye,
   X,
-  Maximize2
+  Maximize2,
+  FileText
 } from "lucide-react";
 import { realProjectsList, RealProject } from "@/data/projectsData";
+import { CaseStudiesModal } from "./CaseStudiesModal";
 
 const categoryFilters = [
   { id: "all", label: "All Projects", icon: Globe2 },
@@ -29,6 +31,7 @@ const categoryFilters = [
 export const RealProjectsShowcase = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [previewProject, setPreviewProject] = useState<RealProject | null>(null);
+  const [caseStudyProject, setCaseStudyProject] = useState<RealProject | null>(null);
   const [imgErrors, setImgErrors] = useState<Record<string, boolean>>({});
 
   const filteredProjects = activeCategory === "all"
@@ -235,14 +238,24 @@ export const RealProjectsShowcase = () => {
                       <ExternalLink size={14} />
                     </a>
 
-                    {/* Preview in Dialog / Frame Button */}
-                    <button
-                      onClick={() => setPreviewProject(project)}
-                      className="flex items-center justify-center gap-1.5 w-full py-2.5 px-3 rounded-xl bg-zinc-100 dark:bg-zinc-950 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-semibold border border-zinc-200 dark:border-zinc-800 transition-colors min-h-[40px]"
-                    >
-                      <Eye size={13} className="text-amber-600 dark:text-[#F5B301]" />
-                      <span>Quick Preview in Modal</span>
-                    </button>
+                    {/* Quick Preview and Case Study Dual Buttons */}
+                    <div className="grid grid-cols-2 gap-2">
+                      <button
+                        onClick={() => setPreviewProject(project)}
+                        className="flex items-center justify-center gap-1.5 w-full py-2.5 px-2 rounded-xl bg-zinc-100 dark:bg-zinc-950 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-[11px] font-semibold border border-zinc-200 dark:border-zinc-800 transition-colors min-h-[38px]"
+                      >
+                        <Eye size={13} className="text-amber-600 dark:text-[#F5B301]" />
+                        <span>Live Frame</span>
+                      </button>
+
+                      <button
+                        onClick={() => setCaseStudyProject(project)}
+                        className="flex items-center justify-center gap-1.5 w-full py-2.5 px-2 rounded-xl bg-zinc-100 dark:bg-zinc-950 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-[11px] font-semibold border border-zinc-200 dark:border-zinc-800 transition-colors min-h-[38px]"
+                      >
+                        <FileText size={13} className="text-amber-600 dark:text-[#F5B301]" />
+                        <span>Case Study</span>
+                      </button>
+                    </div>
                   </div>
                 </motion.div>
               );
@@ -315,6 +328,12 @@ export const RealProjectsShowcase = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Deep Dive Case Studies Modal */}
+      <CaseStudiesModal
+        project={caseStudyProject}
+        onClose={() => setCaseStudyProject(null)}
+      />
     </section>
   );
 };

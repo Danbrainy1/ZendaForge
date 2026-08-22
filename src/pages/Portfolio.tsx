@@ -17,12 +17,15 @@ import {
   ShieldCheck,
   Eye,
   X,
-  Maximize2
+  Maximize2,
+  FileText
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Floating3DShapes } from "@/components/3d/Floating3DShapes";
 import { GlowingOrb } from "@/components/3d/GlowingOrb";
 import { realProjectsList, RealProject } from "@/data/projectsData";
+import { InteractiveDevicePreview } from "@/components/home/InteractiveDevicePreview";
+import { CaseStudiesModal } from "@/components/home/CaseStudiesModal";
 
 const categoryFilters = [
   { id: "all", label: "All Projects", icon: Globe2 },
@@ -36,6 +39,7 @@ const categoryFilters = [
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [previewProject, setPreviewProject] = useState<RealProject | null>(null);
+  const [caseStudyProject, setCaseStudyProject] = useState<RealProject | null>(null);
   const [imgErrors, setImgErrors] = useState<Record<string, boolean>>({});
 
   const filteredProjects = activeFilter === "all"
@@ -73,6 +77,9 @@ const Portfolio = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Interactive Device Viewport Switcher */}
+      <InteractiveDevicePreview />
 
       {/* Filter Tabs & Grid */}
       <section className="py-14 sm:py-20 bg-white dark:bg-[#0A0A0D] border-t border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
@@ -227,13 +234,23 @@ const Portfolio = () => {
                         <ExternalLink size={14} />
                       </a>
 
-                      <button
-                        onClick={() => setPreviewProject(project)}
-                        className="flex items-center justify-center gap-1.5 w-full py-2.5 px-3 rounded-xl bg-zinc-100 dark:bg-zinc-950 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-semibold border border-zinc-200 dark:border-zinc-800 transition-colors min-h-[40px]"
-                      >
-                        <Eye size={13} className="text-amber-600 dark:text-[#F5B301]" />
-                        <span>Quick Preview in Modal</span>
-                      </button>
+                      <div className="grid grid-cols-2 gap-2">
+                        <button
+                          onClick={() => setPreviewProject(project)}
+                          className="flex items-center justify-center gap-1.5 w-full py-2.5 px-2 rounded-xl bg-zinc-100 dark:bg-zinc-950 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-[11px] font-semibold border border-zinc-200 dark:border-zinc-800 transition-colors min-h-[38px]"
+                        >
+                          <Eye size={13} className="text-amber-600 dark:text-[#F5B301]" />
+                          <span>Live Frame</span>
+                        </button>
+
+                        <button
+                          onClick={() => setCaseStudyProject(project)}
+                          className="flex items-center justify-center gap-1.5 w-full py-2.5 px-2 rounded-xl bg-zinc-100 dark:bg-zinc-950 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-[11px] font-semibold border border-zinc-200 dark:border-zinc-800 transition-colors min-h-[38px]"
+                        >
+                          <FileText size={13} className="text-amber-600 dark:text-[#F5B301]" />
+                          <span>Case Study</span>
+                        </button>
+                      </div>
                     </div>
                   </motion.div>
                 );
@@ -307,6 +324,12 @@ const Portfolio = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Case Study Deep Dive Modal */}
+      <CaseStudiesModal
+        project={caseStudyProject}
+        onClose={() => setCaseStudyProject(null)}
+      />
 
       {/* CTA Section */}
       <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#08080A] border-t border-zinc-200 dark:border-zinc-800 transition-colors duration-300">

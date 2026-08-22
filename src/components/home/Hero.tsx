@@ -1,18 +1,21 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { 
   ArrowRight, MessageSquare, Target, Rocket, ShieldCheck, 
-  Sparkles, CheckCircle2, PhoneCall, Globe, Code2 
+  Sparkles, CheckCircle2, PhoneCall, Globe, Code2, Calendar
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Floating3DShapes } from "@/components/3d/Floating3DShapes";
 import { GlowingOrb } from "@/components/3d/GlowingOrb";
 import { WebCraftEmblemIcon } from "@/components/common/BrandLogo";
 import { Interactive3DDeviceShowcase } from "./Interactive3DDeviceShowcase";
+import { BookConsultationModal } from "@/components/common/BookConsultationModal";
 
 export const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -111,14 +114,23 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10"
           >
-            <Link to="/contact">
-              <Button size="lg" className="btn-gold-glow text-sm md:text-base font-extrabold uppercase tracking-wider px-8 py-6 rounded-2xl group shadow-xl">
+            <Link to="/contact" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto btn-gold-glow text-sm md:text-base font-extrabold uppercase tracking-wider px-8 py-6 rounded-2xl group shadow-xl">
                 <span>Start Your Project</span>
                 <ArrowRight size={18} className="ml-2 group-hover:translate-x-1.5 transition-transform" />
               </Button>
             </Link>
+
+            <Button 
+              size="lg" 
+              onClick={() => setIsBookingOpen(true)}
+              className="w-full sm:w-auto text-sm md:text-base font-bold px-7 py-6 rounded-2xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 border border-zinc-700 dark:border-zinc-600 shadow-md flex items-center justify-center gap-2"
+            >
+              <Calendar size={18} className="text-[#F5B301]" />
+              <span>Book Strategy Call</span>
+            </Button>
 
             <a
               href="https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I%20want%20to%20build%20a%20website%20for%20my%20business"
@@ -132,7 +144,7 @@ export const Hero = () => {
                 className="w-full text-sm md:text-base font-bold px-7 py-6 rounded-2xl border-zinc-300 dark:border-[#F5B301]/40 bg-white/90 dark:bg-zinc-900/60 hover:bg-amber-50/50 dark:hover:bg-[#F5B301]/10 text-zinc-900 dark:text-white flex items-center justify-center gap-2.5 shadow-sm"
               >
                 <MessageSquare size={18} className="text-amber-600 dark:text-[#F5B301]" />
-                <span>WhatsApp: +234 814 272 0498</span>
+                <span>WhatsApp Us</span>
               </Button>
             </a>
           </motion.div>
@@ -196,6 +208,12 @@ export const Hero = () => {
           <Interactive3DDeviceShowcase />
         </div>
       </motion.div>
+
+      {/* Booking Modal */}
+      <BookConsultationModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+      />
 
       {/* Bottom Gradient Fade */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-50 dark:from-[#08080A] to-transparent pointer-events-none" />

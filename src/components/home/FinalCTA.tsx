@@ -1,13 +1,17 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { 
   ArrowRight, Phone, Mail, Globe, MessageSquare, 
-  Sparkles, CheckCircle2, ShieldCheck, Zap 
+  Sparkles, CheckCircle2, ShieldCheck, Zap, Calendar 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/common/BrandLogo";
+import { BookConsultationModal } from "@/components/common/BookConsultationModal";
 
 export const FinalCTA = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
   return (
     <section className="py-20 sm:py-24 relative bg-slate-50 dark:bg-[#070709] transition-colors duration-300 overflow-hidden border-t border-zinc-200 dark:border-zinc-800">
       {/* Dynamic 3D Hexagonal Grid Background */}
@@ -65,13 +69,22 @@ export const FinalCTA = () => {
             </p>
 
             {/* Direct Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4">
               <Link to="/contact" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full sm:w-auto btn-gold-glow font-extrabold uppercase text-xs md:text-sm tracking-wider px-8 py-6 rounded-2xl shadow-xl group">
                   <span>Get Started Now</span>
                   <ArrowRight size={18} className="ml-2 group-hover:translate-x-1.5 transition-transform" />
                 </Button>
               </Link>
+
+              <Button 
+                size="lg" 
+                onClick={() => setIsBookingOpen(true)}
+                className="w-full sm:w-auto text-xs md:text-sm font-bold px-7 py-6 rounded-2xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 border border-zinc-700 dark:border-zinc-600 shadow-md flex items-center justify-center gap-2"
+              >
+                <Calendar size={18} className="text-[#F5B301]" />
+                <span>Book 15-Min Discovery Call</span>
+              </Button>
 
               <a
                 href="https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I'm%20ready%20to%20build%20my%20website!"
@@ -85,7 +98,7 @@ export const FinalCTA = () => {
                   className="w-full sm:w-auto text-xs md:text-sm font-bold px-7 py-6 rounded-2xl border-zinc-300 dark:border-[#F5B301]/40 bg-zinc-100 dark:bg-zinc-900/80 hover:bg-zinc-200 dark:hover:bg-[#F5B301]/10 text-zinc-900 dark:text-white flex items-center justify-center gap-2"
                 >
                   <MessageSquare size={18} className="text-amber-600 dark:text-[#F5B301]" />
-                  <span>Chat on WhatsApp</span>
+                  <span>WhatsApp Us</span>
                 </Button>
               </a>
             </div>
@@ -141,6 +154,12 @@ export const FinalCTA = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Booking Modal */}
+      <BookConsultationModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+      />
     </section>
   );
 };
