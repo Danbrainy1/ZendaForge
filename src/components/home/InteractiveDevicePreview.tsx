@@ -54,7 +54,7 @@ export const InteractiveDevicePreview: React.FC = () => {
             INTERACTIVE <span className="text-gold-gradient">MULTI-DEVICE PREVIEW</span>
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mt-3">
-            Every Web-Craft website is engineered to look flawless across all screen sizes. Switch devices below to inspect real live responsive framing.
+            Every Zendaforge website is engineered to look flawless across all screen sizes. Switch devices below to inspect real live responsive framing.
           </p>
         </div>
 

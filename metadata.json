@@ -1,6 +1,6 @@
 {
-  "name": "Web-Craft Projects",
-  "description": "We Design. We Build. We Empower. Modern, high-performance websites for businesses, schools, hospitals, and churches in Nigeria.",
+  "name": "Zendaforge",
+  "description": "We Design. We Build. We Empower. Modern, high-performance web systems, custom software, and digital platforms by Zendaforge.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

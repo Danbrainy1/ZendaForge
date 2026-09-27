@@ -59,7 +59,7 @@ export const BookConsultationModal: React.FC<BookConsultationModalProps> = ({
 
   const handleWhatsAppBooking = () => {
     const msg = encodeURIComponent(
-      `Hello Web-Craft Projects! I would like to book a 15-Minute Strategy Discovery Call:\n\n- Name: ${name || "Prospective Client"}\n- Preferred Slot: ${selectedDay} at ${selectedTime}\n- Project Type: ${projectType}\n- Email: ${email || "Not provided"}\n- Phone: ${phone || "Not provided"}\n\nPlease confirm my session time!`
+      `Hello Zendaforge! I would like to book a 15-Minute Strategy Discovery Call:\n\n- Name: ${name || "Prospective Client"}\n- Preferred Slot: ${selectedDay} at ${selectedTime}\n- Project Type: ${projectType}\n- Email: ${email || "Not provided"}\n- Phone: ${phone || "Not provided"}\n\nPlease confirm my session time!`
     );
     window.open(`https://wa.me/2348142720498?text=${msg}`, "_blank");
     onClose();

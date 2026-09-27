@@ -69,7 +69,7 @@ export const MaintenanceHostingSection: React.FC = () => {
             <span className="text-gold-gradient">WE MANAGE, SECURE & SCALE</span>
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mt-3">
-            Focus on running your business while Web-Craft handles your domain, cloud hosting, security patches, backups, and corporate email accounts.
+            Focus on running your business while Zendaforge handles your domain, cloud hosting, security patches, backups, and corporate email accounts.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export const MaintenanceHostingSection: React.FC = () => {
               Already have a website that needs maintenance or redesign?
             </h4>
             <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300">
-              Migrate to Web-Craft today for faster speeds, tighter security, and dedicated WhatsApp support.
+              Migrate to Zendaforge today for faster speeds, tighter security, and dedicated WhatsApp support.
             </p>
           </div>
 

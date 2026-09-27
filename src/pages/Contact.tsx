@@ -31,15 +31,15 @@ const officialContactInfo = [
   {
     icon: Mail,
     label: "Official Email",
-    value: "webcraftprojects1@gmail.com",
-    href: "mailto:webcraftprojects1@gmail.com",
+    value: "hello@zendaforge.com",
+    href: "mailto:hello@zendaforge.com",
     subtext: "Average response within 1 hour",
   },
   {
     icon: Globe,
     label: "Official Website",
-    value: "www.webcraftprojects.com",
-    href: "https://www.webcraftprojects.com",
+    value: "www.zendaforge.com",
+    href: "https://www.zendaforge.com",
     subtext: "We Design. We Build. We Empower.",
   },
   {
@@ -114,7 +114,7 @@ const Contact = () => {
 
   const getDirectWhatsAppUrl = () => {
     const text = encodeURIComponent(
-      `Hello Web-Craft Projects,\n\nName: ${formData.name || "Client"}\nEmail: ${formData.email || "N/A"}\nPhone: ${formData.phone || "N/A"}\nService: ${formData.service}\nBudget: ${formData.budget}\nMessage: ${formData.message || "I'd like to build a website."}`
+      `Hello Zendaforge,\n\nName: ${formData.name || "Client"}\nEmail: ${formData.email || "N/A"}\nPhone: ${formData.phone || "N/A"}\nService: ${formData.service}\nBudget: ${formData.budget}\nMessage: ${formData.message || "I'd like to build a website."}`
     );
     return `https://wa.me/2348142720498?text=${text}`;
   };
@@ -365,7 +365,7 @@ const Contact = () => {
                 </div>
 
                 <a
-                  href="https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I'm%20ready%20to%20discuss%20my%20website"
+                  href="https://wa.me/2348142720498?text=Hello%20Zendaforge%20Projects,%20I'm%20ready%20to%20discuss%20my%20website"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-center py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider transition-colors shadow-lg"

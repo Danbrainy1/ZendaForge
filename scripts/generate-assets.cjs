@@ -27,141 +27,14 @@ function ensureDir(dirPath) {
 }
 
 async function buildAllAssets() {
-  console.log('--- 1. PROCESSING OFFICIAL WEBCRAFT-PROJECT LOGO ---');
+  console.log('--- 1. GENERATING OFFICIAL ZENDAFORGE LOGO & FAVICON SUITE ---');
   
   ensureDir('public/projects');
   ensureDir('src/assets/projects');
 
-  // Verify WEBCRAFT-LOGO.png exists in root
-  if (!fs.existsSync('WEBCRAFT-LOGO.png')) {
-    throw new Error('WEBCRAFT-LOGO.png not found in project root!');
-  }
-
-  const { data, info } = await sharp('WEBCRAFT-LOGO.png').raw().toBuffer({ resolveWithObject: true });
-  console.log(`Loaded WEBCRAFT-LOGO.png (${info.width}x${info.height}, ${info.channels} channels)`);
-
-  // Create clean transparent RGBA version of WEBCRAFT-LOGO
-  const rgba = Buffer.alloc(info.width * info.height * 4);
-  for (let i = 0; i < info.width * info.height; i++) {
-    const srcIdx = i * 3;
-    const dstIdx = i * 4;
-    const r = data[srcIdx];
-    const g = data[srcIdx + 1];
-    const b = data[srcIdx + 2];
-
-    const minC = Math.min(r, g, b);
-    if (minC > 245) {
-      rgba[dstIdx] = r;
-      rgba[dstIdx + 1] = g;
-      rgba[dstIdx + 2] = b;
-      rgba[dstIdx + 3] = 0;
-    } else if (minC > 215) {
-      const alpha = Math.round(255 * (1 - (minC - 215) / (245 - 215)));
-      rgba[dstIdx] = r;
-      rgba[dstIdx + 1] = g;
-      rgba[dstIdx + 2] = b;
-      rgba[dstIdx + 3] = alpha;
-    } else {
-      rgba[dstIdx] = r;
-      rgba[dstIdx + 1] = g;
-      rgba[dstIdx + 2] = b;
-      rgba[dstIdx + 3] = 255;
-    }
-  }
-
-  const basePng = await sharp(rgba, { raw: { width: info.width, height: info.height, channels: 4 } }).png().toBuffer();
-
-  // 1. Full Logo (trimmed & cropped to content)
-  const fullLogoTrimmed = await sharp(basePng)
-    .extract({ left: 120, top: 200, width: 1400, height: 480 })
-    .png()
-    .toBuffer();
-
-  // Full Logo scaled (900x308)
-  const fullLogoPng = await sharp(fullLogoTrimmed)
-    .resize(900, 308, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
-    .png()
-    .toBuffer();
-
-  // 2. Emblem extracted from left side (440x480)
-  const emblemCrop = await sharp(basePng)
-    .extract({ left: 120, top: 200, width: 440, height: 480 })
-    .png()
-    .toBuffer();
-
-  // Emblem Square 512x512 with transparent background
-  const emblemSquare512 = await sharp(emblemCrop)
-    .resize(512, 512, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
-    .png()
-    .toBuffer();
-
-  // Favicon 256x256
-  const favicon256 = await sharp(emblemCrop)
-    .resize(256, 256, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
-    .png()
-    .toBuffer();
-
-  // Favicon 64x64 (favicon.png)
-  const favicon64 = await sharp(emblemCrop)
-    .resize(64, 64, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
-    .png()
-    .toBuffer();
-
-  // Favicon 32x32 (favicon-32.png & favicon.ico)
-  const favicon32 = await sharp(emblemCrop)
-    .resize(32, 32, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
-    .png()
-    .toBuffer();
-
-  // Write all logo and favicon files to both /public and /src/assets
-  const filesToWrite = [
-    // Emblem variants
-    { path: 'public/webcraft-emblem.png', buf: emblemSquare512 },
-    { path: 'public/webcraft-emblem-transparent.png', buf: emblemSquare512 },
-    { path: 'public/logo-icon.png', buf: emblemSquare512 },
-    { path: 'public/original-icon.png', buf: emblemSquare512 },
-    { path: 'src/assets/webcraft-emblem.png', buf: emblemSquare512 },
-    { path: 'src/assets/webcraft-emblem-transparent.png', buf: emblemSquare512 },
-    { path: 'src/assets/logo-icon.png', buf: emblemSquare512 },
-    { path: 'src/assets/original-icon.png', buf: emblemSquare512 },
-
-    // Full Logo variants
-    { path: 'public/webcraft-full-logo.png', buf: fullLogoPng },
-    { path: 'public/webcraft-logo-dark.png', buf: fullLogoPng },
-    { path: 'public/webcraft-text.png', buf: fullLogoPng },
-    { path: 'public/webcraft-text-white.png', buf: fullLogoPng },
-    { path: 'public/logo-transparent.png', buf: fullLogoPng },
-    { path: 'public/WEBCRAFT-LOGO.png', buf: fullLogoPng },
-    { path: 'src/assets/webcraft-full-logo.png', buf: fullLogoPng },
-    { path: 'src/assets/webcraft-logo-dark.png', buf: fullLogoPng },
-    { path: 'src/assets/webcraft-text.png', buf: fullLogoPng },
-    { path: 'src/assets/webcraft-text-white.png', buf: fullLogoPng },
-    { path: 'src/assets/logo-transparent.png', buf: fullLogoPng },
-    { path: 'src/assets/WEBCRAFT-LOGO.png', buf: fullLogoPng },
-
-    // Favicon files
-    { path: 'public/favicon-256.png', buf: favicon256 },
-    { path: 'public/favicon.png', buf: favicon64 },
-    { path: 'public/favicon-32.png', buf: favicon32 },
-    { path: 'public/favicon.ico', buf: favicon32 },
-    { path: 'src/assets/favicon-256.png', buf: favicon256 },
-    { path: 'src/assets/favicon.png', buf: favicon64 },
-    { path: 'src/assets/favicon-32.png', buf: favicon32 },
-    { path: 'src/assets/favicon.ico', buf: favicon32 },
-  ];
-
-  for (const item of filesToWrite) {
-    fs.writeFileSync(item.path, item.buf);
-    console.log(`Saved: ${item.path} (${item.buf.length} bytes)`);
-  }
-
-  // Also copy WEBCRAFT FLIER
-  if (fs.existsSync('WEBCRAFT FLIER.png')) {
-    const flierPng = await sharp('WEBCRAFT FLIER.png').resize(800, 1200, { fit: 'inside' }).png().toBuffer();
-    fs.writeFileSync('public/WEBCRAFT-FLIER.png', flierPng);
-    fs.writeFileSync('src/assets/WEBCRAFT-FLIER.png', flierPng);
-    console.log(`Saved WEBCRAFT-FLIER.png (${flierPng.length} bytes)`);
-  }
+  // Run the Zendaforge master generator
+  const { execSync } = require('child_process');
+  execSync('node scripts/build-zendaforge-assets.cjs', { stdio: 'inherit' });
 
   console.log('--- 2. EXTRACTING REAL ASSETS FROM LIVE PROJECT LINKS ---');
 
@@ -615,7 +488,7 @@ async function buildAllAssets() {
     }
   }
 
-  console.log('--- ALL WEBCRAFT LOGO, FAVICON & PROJECT CARDS GENERATED SUCCESSFULLY ---');
+  console.log('--- ALL ZENDAFORGE LOGO, FAVICON & PROJECT CARDS GENERATED SUCCESSFULLY ---');
 }
 
 buildAllAssets().catch(err => {

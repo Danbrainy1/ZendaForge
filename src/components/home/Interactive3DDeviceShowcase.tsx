@@ -159,7 +159,7 @@ export const Interactive3DDeviceShowcase: React.FC = () => {
                 </div>
                 <div className="text-[10px] sm:text-[11px] font-mono text-zinc-400 bg-zinc-950 px-2 sm:px-4 py-0.5 rounded-md border border-zinc-800 flex items-center gap-1.5 max-w-[170px] sm:max-w-none truncate">
                   <span className="text-[#F5B301] text-[9px] sm:text-[10px]">🔒</span>
-                  <span className="truncate">webcraftprojects.com</span>
+                  <span className="truncate">zendaforge.com</span>
                 </div>
                 <div className="text-[9px] sm:text-[10px] text-zinc-500 font-bold hidden sm:inline">100% RESPONSIVE</div>
               </div>
@@ -177,10 +177,10 @@ export const Interactive3DDeviceShowcase: React.FC = () => {
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-800/80">
                   <div className="flex items-center gap-2">
                     <div className="w-6 h-6 rounded-md bg-[#F5B301] flex items-center justify-center font-black text-black text-xs">
-                      WC
+                      ZF
                     </div>
                     <span className="text-xs font-extrabold text-white tracking-wider">
-                      WEB-<span className="text-[#F5B301]">CRAFT</span>
+                      ZENDA<span className="text-[#F5B301]">FORGE</span>
                     </span>
                   </div>
                   <div className="hidden sm:flex items-center gap-3 text-[11px] font-semibold text-zinc-400">
@@ -335,8 +335,8 @@ export const Interactive3DDeviceShowcase: React.FC = () => {
             <div className="p-3 rounded-xl bg-zinc-900 border border-zinc-800/80 mb-2">
               <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
                 <div className="flex items-center gap-1.5">
-                  <div className="w-4 h-4 rounded bg-[#F5B301] text-black font-black text-[9px] flex items-center justify-center">WC</div>
-                  <span className="text-[10px] font-black text-white">WEB-CRAFT</span>
+                  <div className="w-4 h-4 rounded bg-[#F5B301] text-black font-black text-[9px] flex items-center justify-center">ZF</div>
+                  <span className="text-[10px] font-black text-white">ZENDAFORGE</span>
                 </div>
                 <div className="w-4 h-0.5 bg-zinc-600 rounded" />
               </div>

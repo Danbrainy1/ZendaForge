@@ -87,7 +87,7 @@ export const FinalCTA = () => {
               </Button>
 
               <a
-                href="https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I'm%20ready%20to%20build%20my%20website!"
+                href="https://wa.me/2348142720498?text=Hello%20Zendaforge%20Projects,%20I'm%20ready%20to%20build%20my%20website!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
@@ -121,7 +121,7 @@ export const FinalCTA = () => {
 
               {/* Email */}
               <a 
-                href="mailto:webcraftprojects1@gmail.com"
+                href="mailto:hello@zendaforge.com"
                 className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 hover:border-amber-500/50 dark:hover:border-[#F5B301]/40 transition-colors flex items-center gap-3.5 group shadow-sm"
               >
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 dark:bg-[#F5B301]/10 flex items-center justify-center text-amber-600 dark:text-[#F5B301] shrink-0 group-hover:bg-[#F5B301] group-hover:text-black transition-colors">
@@ -129,7 +129,7 @@ export const FinalCTA = () => {
                 </div>
                 <div>
                   <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-bold uppercase">Official Email</div>
-                  <div className="text-xs font-bold text-zinc-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-[#F5B301] transition-colors">webcraftprojects1@gmail.com</div>
+                  <div className="text-xs font-bold text-zinc-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-[#F5B301] transition-colors">hello@zendaforge.com</div>
                 </div>
               </a>
 
@@ -140,7 +140,7 @@ export const FinalCTA = () => {
                 </div>
                 <div>
                   <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-bold uppercase">Official Website</div>
-                  <div className="text-xs font-bold text-zinc-900 dark:text-white">www.webcraftprojects.com</div>
+                  <div className="text-xs font-bold text-zinc-900 dark:text-white">www.zendaforge.com</div>
                 </div>
               </div>
             </div>

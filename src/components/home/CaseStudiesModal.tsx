@@ -174,7 +174,7 @@ export const CaseStudiesModal: React.FC<CaseStudiesModalProps> = ({ project, onC
               <div className="p-4 rounded-2xl bg-amber-50/50 dark:bg-zinc-900 border border-amber-200 dark:border-[#F5B301]/40 space-y-1.5">
                 <div className="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-amber-700 dark:text-[#F5B301]">
                   <Zap size={14} />
-                  <span>The Web-Craft Solution</span>
+                  <span>The Zendaforge Solution</span>
                 </div>
                 <p className="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
                   {data.solution}

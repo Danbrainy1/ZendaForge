@@ -48,7 +48,7 @@ const testimonialsData: TestimonialItem[] = [
     category: "schools",
     icon: GraduationCap,
     content:
-      "Web-Craft Projects built our online student result checker and school fee payment portal in record time. Over 1,200 parents checked term results seamlessly from their phones with scratch card PIN authentication without a single server crash.",
+      "Zendaforge built our online student result checker and school fee payment portal in record time. Over 1,200 parents checked term results seamlessly from their phones with scratch card PIN authentication without a single server crash.",
     highlightMetric: "1,200+ Results",
     metricLabel: "Checked Zero Downtime",
     rating: 5,
@@ -343,7 +343,7 @@ export const Testimonials = () => {
             transition={{ delay: 0.2 }}
             className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto"
           >
-            Hear directly from school proprietors, e-commerce founders, medical directors, and corporate leaders whose businesses were transformed by Web-Craft Projects.
+            Hear directly from school proprietors, e-commerce founders, medical directors, and corporate leaders whose businesses were transformed by Zendaforge.
           </motion.p>
         </div>
 
@@ -604,7 +604,7 @@ export const Testimonials = () => {
             Want your business or school featured among our success stories?
           </p>
           <a
-            href="https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I%20saw%20your%20client%20reviews%20and%20want%20to%20build%20my%20website!"
+            href="https://wa.me/2348142720498?text=Hello%20Zendaforge%20Projects,%20I%20saw%20your%20client%20reviews%20and%20want%20to%20build%20my%20website!"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#F5B301] hover:bg-[#FFE066] text-black font-extrabold text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(245,179,1,0.4)] hover:scale-105 transition-all"

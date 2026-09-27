@@ -57,7 +57,7 @@ export const BeforeAfterSlider: React.FC = () => {
 
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-zinc-900 dark:text-white uppercase tracking-tight leading-tight">
             SEE THE DIFFERENCE: <br className="hidden sm:inline" />
-            <span className="text-gold-gradient">OUTDATED SITE VS. WEB-CRAFT</span>
+            <span className="text-gold-gradient">OUTDATED SITE VS. ZENDAFORGE</span>
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 text-xs sm:text-base md:text-lg max-w-2xl mx-auto mt-2 sm:mt-3">
             Drag the slider horizontally or tap the quick presets to compare an ordinary slow generic website against our custom high-conversion architecture.
@@ -74,7 +74,7 @@ export const BeforeAfterSlider: React.FC = () => {
                   : "bg-slate-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 hover:text-black dark:hover:text-white"
               }`}
             >
-              ⭐ Web-Craft Focus
+              ⭐ Zendaforge Focus
             </button>
             <button
               type="button"
@@ -113,12 +113,12 @@ export const BeforeAfterSlider: React.FC = () => {
             onTouchMove={handleTouchMove}
             className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-zinc-300 dark:border-zinc-800 shadow-2xl bg-zinc-950 select-none min-h-[420px] sm:min-h-[500px] cursor-ew-resize touch-pan-y"
           >
-            {/* RIGHT SIDE (Web-Craft Modern Build) - Full background */}
+            {/* RIGHT SIDE (Zendaforge Modern Build) - Full background */}
             <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black p-4 sm:p-8 md:p-10 flex flex-col justify-between">
               <div className="flex justify-end">
                 <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#F5B301] text-black font-black text-[10px] sm:text-xs uppercase tracking-wider shadow-lg">
                   <Sparkles size={13} />
-                  <span>Web-Craft Platform</span>
+                  <span>Zendaforge Platform</span>
                 </span>
               </div>
 

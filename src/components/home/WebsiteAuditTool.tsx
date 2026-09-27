@@ -227,11 +227,11 @@ export const WebsiteAuditTool: React.FC = () => {
               {/* WhatsApp Fix CTA */}
               <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p className="text-xs text-zinc-600 dark:text-zinc-300 text-center sm:text-left">
-                  🚀 Ready to upgrade <strong>{auditResult.url}</strong> to a high-speed, high-converting Web-Craft platform?
+                  🚀 Ready to upgrade <strong>{auditResult.url}</strong> to a high-speed, high-converting Zendaforge platform?
                 </p>
 
                 <a
-                  href={`https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I%20ran%20an%20audit%20for%20my%20website%20(${encodeURIComponent(auditResult.url)})%20and%20would%20like%20your%20team%20to%20optimize%20it!`}
+                  href={`https://wa.me/2348142720498?text=Hello%20Zendaforge%20Projects,%20I%20ran%20an%20audit%20for%20my%20website%20(${encodeURIComponent(auditResult.url)})%20and%20would%20like%20your%20team%20to%20optimize%20it!`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto"

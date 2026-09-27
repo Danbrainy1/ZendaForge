@@ -13,9 +13,9 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    // Default to dark as per WebCraft Project brand signature, but check localStorage
+    // Default to dark as per Zendaforge brand signature, but check localStorage
     if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem("webcraft_theme") as Theme | null;
+      const savedTheme = (localStorage.getItem("zendaforge_theme") || localStorage.getItem("webcraft_theme")) as Theme | null;
       if (savedTheme === "light" || savedTheme === "dark") {
         return savedTheme;
       }
@@ -32,7 +32,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       root.classList.remove("dark");
       root.classList.add("light");
     }
-    localStorage.setItem("webcraft_theme", theme);
+    localStorage.setItem("zendaforge_theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {

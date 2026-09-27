@@ -178,7 +178,7 @@ const Pricing = () => {
 
                 <div className="pt-6 mt-6 border-t border-zinc-200 dark:border-zinc-800 space-y-2">
                   <a
-                    href={`https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I%20would%20like%20to%20order%20the%20${encodeURIComponent(pkg.name)}%20package`}
+                    href={`https://wa.me/2348142720498?text=Hello%20Zendaforge%20Projects,%20I%20would%20like%20to%20order%20the%20${encodeURIComponent(pkg.name)}%20package`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"

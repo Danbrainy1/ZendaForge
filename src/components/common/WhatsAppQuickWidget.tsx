@@ -14,31 +14,31 @@ const quickPrompts: QuickPrompt[] = [
     id: "school",
     icon: GraduationCap,
     label: "School / Academy Portal",
-    message: "Hello Web-Craft Projects, I need a website and student admissions portal for my school.",
+    message: "Hello Zendaforge, I need a website and student admissions portal for my school.",
   },
   {
     id: "restaurant",
     icon: UtensilsCrossed,
     label: "Restaurant / Food Ordering",
-    message: "Hello Web-Craft Projects, I need a website with dynamic digital food menu and online ordering for my restaurant.",
+    message: "Hello Zendaforge, I need a website with dynamic digital food menu and online ordering for my restaurant.",
   },
   {
     id: "hotel",
     icon: Hotel,
     label: "Hotel & Suite Booking",
-    message: "Hello Web-Craft Projects, I need a luxury hospitality website with room booking & suite showcase.",
+    message: "Hello Zendaforge, I need a luxury hospitality website with room booking & suite showcase.",
   },
   {
     id: "business",
     icon: Building2,
     label: "Corporate Business Website",
-    message: "Hello Web-Craft Projects, I would like to build a modern corporate business website for my company.",
+    message: "Hello Zendaforge, I would like to build a modern corporate business website for my company.",
   },
   {
     id: "fast",
     icon: Zap,
     label: "Fast Launch (5-7 Days)",
-    message: "Hello Web-Craft Projects, I need a fast-turnaround website delivered within 5-7 business days.",
+    message: "Hello Zendaforge, I need a fast-turnaround website delivered within 5-7 business days.",
   },
 ];
 
@@ -74,7 +74,7 @@ export const WhatsAppQuickWidget: React.FC = () => {
                   <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-green-400 ring-2 ring-emerald-950" />
                 </div>
                 <div>
-                  <div className="text-xs font-black uppercase tracking-wider">Web-Craft Projects</div>
+                  <div className="text-xs font-black uppercase tracking-wider">Zendaforge</div>
                   <div className="text-[10px] text-emerald-200 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-ping" />
                     <span>Online & Ready to Chat</span>

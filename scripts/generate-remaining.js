@@ -149,7 +149,7 @@ async function makeRemaining() {
         💬 WhatsApp: wa.me/2348142720498
       </text>
       <text x="400" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="18" fill="#27272A">
-        ✉️ webcraftprojects@gmail.com • 🌐 www.webcraftprojects.com
+        ✉️ zendaforgeprojects@gmail.com • 🌐 www.zendaforge.com
       </text>
       <text x="400" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="14" fill="#000000" letter-spacing="3">
         LAGOS &amp; ABUJA, NIGERIA • WORLDWIDE CLIENTS

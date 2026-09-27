@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* WebCraft Project Design System - Premium Gold & Dynamic Light/Dark Themes */
+/* ZendaForge Design System - Premium Gold & Dynamic Light/Dark Themes */
 
 @layer base {
   :root {
@@ -40,7 +40,7 @@
 
     --radius: 0.75rem;
 
-    /* Custom WebCraft Tokens */
+    /* Custom ZendaForge Tokens */
     --gold: 43 96% 56%;
     --gold-light: 45 100% 72%;
     --gold-dark: 38 92% 42%;
@@ -107,7 +107,7 @@
     --input: 0 0% 15%;
     --ring: 43 96% 56%;
 
-    /* Custom WebCraft Tokens */
+    /* Custom ZendaForge Tokens */
     --gold: 43 96% 56%;
     --gold-light: 45 100% 72%;
     --gold-dark: 40 90% 45%;

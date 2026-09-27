@@ -23,7 +23,7 @@ const footerLinks = {
   ],
   company: [
     { name: "Home", path: "/" },
-    { name: "About Web-Craft", path: "/about" },
+    { name: "About Zendaforge", path: "/about" },
     { name: "Our Services", path: "/services" },
     { name: "Portfolio & Case Studies", path: "/portfolio" },
     { name: "Pricing Packages", path: "/pricing" },
@@ -107,17 +107,17 @@ export const Footer = () => {
               </a>
 
               <a 
-                href="mailto:webcraftprojects1@gmail.com"
-                className="flex items-center gap-3 text-sm text-zinc-800 dark:text-zinc-200 hover:text-amber-600 dark:hover:text-[#F5B301] transition-colors"
+                href="mailto:hello@zendaforge.com"
+                className="flex items-center gap-3 text-sm text-zinc-800 dark:text-zinc-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
               >
-                <div className="w-7 h-7 rounded-lg bg-amber-500/10 dark:bg-[#F5B301]/10 flex items-center justify-center text-amber-600 dark:text-[#F5B301] shrink-0">
+                <div className="w-7 h-7 rounded-lg bg-cyan-500/10 dark:bg-cyan-500/10 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shrink-0">
                   <Mail size={14} />
                 </div>
-                <span className="font-semibold">webcraftprojects1@gmail.com</span>
+                <span className="font-semibold">hello@zendaforge.com</span>
               </a>
 
               <div className="flex items-center gap-3 text-sm text-zinc-700 dark:text-zinc-200">
-                <div className="w-7 h-7 rounded-lg bg-amber-500/10 dark:bg-[#F5B301]/10 flex items-center justify-center text-amber-600 dark:text-[#F5B301] shrink-0">
+                <div className="w-7 h-7 rounded-lg bg-cyan-500/10 dark:bg-cyan-500/10 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shrink-0">
                   <MapPin size={14} />
                 </div>
                 <span>Lagos & Abuja, Nigeria (Serving Worldwide)</span>
@@ -126,7 +126,7 @@ export const Footer = () => {
 
             {/* Direct WhatsApp Button */}
             <motion.a
-              href="https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I%20want%20to%20build%20a%20website"
+              href="https://wa.me/2348142720498?text=Hello%20Zendaforge,%20I%20want%20to%20build%20a%20website"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
@@ -222,11 +222,11 @@ export const Footer = () => {
 
         {/* Bottom copyright */}
         <div className="mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p>© {currentYear} Web-Craft Projects. All rights reserved. Registered web development & software agency.</p>
+          <p>© {currentYear} Zendaforge. All rights reserved. Registered web development & software agency.</p>
           <div className="flex items-center gap-6">
-            <span className="text-zinc-600 dark:text-zinc-400">www.webcraftprojects.com</span>
+            <span className="text-zinc-600 dark:text-zinc-400">www.zendaforge.com</span>
             <span>•</span>
-            <span className="text-amber-600 dark:text-[#F5B301] font-semibold">We Design. We Build. We Empower.</span>
+            <span className="text-cyan-600 dark:text-cyan-400 font-semibold">We Design. We Build. We Empower.</span>
           </div>
         </div>
       </div>

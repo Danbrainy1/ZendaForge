@@ -66,7 +66,7 @@ export const WhyChooseUs: React.FC = () => {
                 WHY <span className="text-gold-gradient">CHOOSE US?</span>
               </h2>
               <p className="text-zinc-600 dark:text-zinc-300 text-base md:text-lg mt-5 leading-relaxed">
-                At Web-Craft Projects, we combine bleeding-edge technology with deep market understanding 
+                At Zendaforge, we combine bleeding-edge technology with deep market understanding 
                 to build digital experiences that drive real revenue and reputation for your brand.
               </p>
             </div>
@@ -104,7 +104,7 @@ export const WhyChooseUs: React.FC = () => {
               <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800">
                 <Link to="/contact">
                   <Button className="w-full btn-gold-glow py-6 text-xs font-extrabold uppercase tracking-wider rounded-xl shadow-lg">
-                    Experience the Web-Craft Difference
+                    Experience the Zendaforge Difference
                   </Button>
                 </Link>
               </div>

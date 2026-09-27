@@ -146,7 +146,7 @@ const developmentSteps = [
 
 const faqs = [
   {
-    q: "How long does it take to build a website with Web-Craft Projects?",
+    q: "How long does it take to build a website with Zendaforge?",
     a: "Standard business websites and landing pages are completed within 5-7 business days. Complex school portals, hospital platforms, and custom e-commerce stores take between 10-14 days.",
   },
   {
@@ -189,7 +189,7 @@ const Services = () => {
               <span className="text-gold-gradient">UNSTOPPABLE GROWTH</span>
             </h1>
             <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto leading-relaxed">
-              Explore the 6 core pillars of Web-Craft Projects. From bespoke design to enterprise portals and 24/7 security, we engineer digital solutions that deliver real results.
+              Explore the 6 core pillars of Zendaforge. From bespoke design to enterprise portals and 24/7 security, we engineer digital solutions that deliver real results.
             </p>
           </motion.div>
         </div>
@@ -275,7 +275,7 @@ const Services = () => {
                       </Button>
                     </Link>
                     <a
-                      href={`https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I'm%20interested%20in%20your%20${encodeURIComponent(activeService.title)}%20service`}
+                      href={`https://wa.me/2348142720498?text=Hello%20Zendaforge%20Projects,%20I'm%20interested%20in%20your%20${encodeURIComponent(activeService.title)}%20service`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md"

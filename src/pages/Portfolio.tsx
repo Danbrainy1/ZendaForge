@@ -361,7 +361,7 @@ const Portfolio = () => {
               </Button>
             </Link>
             <a
-              href="https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I'm%20ready%20to%20start%20my%20website"
+              href="https://wa.me/2348142720498?text=Hello%20Zendaforge%20Projects,%20I'm%20ready%20to%20start%20my%20website"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto"

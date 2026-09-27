@@ -182,7 +182,7 @@ export const IndustriesSection: React.FC = () => {
                     </Button>
                   </Link>
                   <a 
-                    href={`https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I%20would%20like%20to%20discuss%20a%20website%20for%20my%20${encodeURIComponent(current.title)}`}
+                    href={`https://wa.me/2348142720498?text=Hello%20Zendaforge%20Projects,%20I%20would%20like%20to%20discuss%20a%20website%20for%20my%20${encodeURIComponent(current.title)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-900 dark:text-white text-xs font-bold border border-zinc-300 dark:border-zinc-700 transition-colors"

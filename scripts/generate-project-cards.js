@@ -172,7 +172,7 @@ async function generateProjectCards() {
 
       <!-- Brand watermark -->
       <text x="780" y="555" font-family="system-ui, sans-serif" font-weight="800" font-size="18" fill="#F5B301" fill-opacity="0.7" letter-spacing="2">
-        CRAFTED BY WEB-CRAFT
+        CRAFTED BY ZENDAFORGE
       </text>
     </svg>`;
 

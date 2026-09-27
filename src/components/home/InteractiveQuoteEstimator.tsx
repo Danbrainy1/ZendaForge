@@ -68,7 +68,7 @@ export const InteractiveQuoteEstimator: React.FC = () => {
     .map((id) => addonFeatures.find((a) => a.id === id)?.name)
     .filter(Boolean);
 
-  const quoteSummaryText = `Web-Craft Project Estimate:\n- Project Type: ${currentBase.name}\n- Selected Addons: ${selectedAddonsNames.join(", ")}\n- Express Delivery: ${isExpress ? "Yes (Priority 3-5 days)" : "Standard"}\n- Estimated Investment: ${formatPrice(grandTotalNGN)}\n- Timeline: ${isExpress ? "3-5 Business Days" : currentBase.days}`;
+  const quoteSummaryText = `Zendaforge Project Estimate:\n- Project Type: ${currentBase.name}\n- Selected Addons: ${selectedAddonsNames.join(", ")}\n- Express Delivery: ${isExpress ? "Yes (Priority 3-5 days)" : "Standard"}\n- Estimated Investment: ${formatPrice(grandTotalNGN)}\n- Timeline: ${isExpress ? "3-5 Business Days" : currentBase.days}`;
 
   const handleCopySummary = () => {
     navigator.clipboard.writeText(quoteSummaryText);
@@ -77,7 +77,7 @@ export const InteractiveQuoteEstimator: React.FC = () => {
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hello Web-Craft Projects, I configured a quote on your website:\n\n- Project Type: ${currentBase.name}\n- Selected Addons: ${selectedAddonsNames.join(", ")}\n- Express Delivery: ${isExpress ? "Yes (Priority 3-5 days)" : "Standard"}\n- Estimated Budget: ${formatPrice(grandTotalNGN)}\n\nCan we discuss starting this project?`
+    `Hello Zendaforge, I configured a quote on your website:\n\n- Project Type: ${currentBase.name}\n- Selected Addons: ${selectedAddonsNames.join(", ")}\n- Express Delivery: ${isExpress ? "Yes (Priority 3-5 days)" : "Standard"}\n- Estimated Budget: ${formatPrice(grandTotalNGN)}\n\nCan we discuss starting this project?`
   );
 
   return (

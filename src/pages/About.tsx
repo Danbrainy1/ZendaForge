@@ -50,7 +50,7 @@ const About = () => {
             className="max-w-3xl mx-auto space-y-4"
           >
             <span className="text-xs font-black uppercase tracking-[0.25em] text-amber-700 dark:text-[#F5B301] bg-amber-500/10 dark:bg-[#F5B301]/10 px-4 py-1.5 rounded-full border border-amber-500/30 dark:border-[#F5B301]/30">
-              ABOUT WEB-CRAFT PROJECTS
+              ABOUT ZENDAFORGE PROJECTS
             </span>
             
             <h1 className="text-4xl sm:text-6xl font-black text-zinc-900 dark:text-white uppercase tracking-tight leading-none">
@@ -80,7 +80,7 @@ const About = () => {
               
               <div className="space-y-4 text-zinc-600 dark:text-zinc-300 text-sm md:text-base leading-relaxed">
                 <p>
-                  Web-Craft Projects was established with a singular mission: to eliminate the frustrating gap between expensive, slow web agencies and sub-standard amateur websites.
+                  Zendaforge was established with a singular mission: to eliminate the frustrating gap between expensive, slow web agencies and sub-standard amateur websites.
                 </p>
                 <p>
                   We recognized that Nigerian businesses, private schools, medical centers, and growing enterprises needed cutting-edge, world-class web infrastructure without inflated corporate overheads.
@@ -147,7 +147,7 @@ const About = () => {
               OUR GUIDING PILLARS
             </span>
             <h2 className="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white uppercase tracking-tight mt-4">
-              WHAT DEFINES <span className="text-gold-gradient">WEB-CRAFT</span>
+              WHAT DEFINES <span className="text-gold-gradient">ZENDAFORGE</span>
             </h2>
           </div>
 
@@ -190,7 +190,7 @@ const About = () => {
               </Button>
             </Link>
             <a
-              href="https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I%20would%20like%20to%20learn%20more%20about%20your%20services"
+              href="https://wa.me/2348142720498?text=Hello%20Zendaforge%20Projects,%20I%20would%20like%20to%20learn%20more%20about%20your%20services"
               target="_blank"
               rel="noopener noreferrer"
             >

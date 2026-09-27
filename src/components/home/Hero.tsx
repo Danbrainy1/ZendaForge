@@ -8,7 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Floating3DShapes } from "@/components/3d/Floating3DShapes";
 import { GlowingOrb } from "@/components/3d/GlowingOrb";
-import { WebCraftEmblemIcon } from "@/components/common/BrandLogo";
+import { ZendaforgeEmblemIcon } from "@/components/common/BrandLogo";
 import { Interactive3DDeviceShowcase } from "./Interactive3DDeviceShowcase";
 import { BookConsultationModal } from "@/components/common/BookConsultationModal";
 
@@ -79,10 +79,10 @@ export const Hero = () => {
             className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#F5B301]/40 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(245,179,1,0.15)] dark:shadow-[0_0_20px_rgba(245,179,1,0.2)]"
           >
             <div className="w-5 h-5 flex items-center justify-center shrink-0">
-              <WebCraftEmblemIcon className="w-full h-full filter drop-shadow-[0_0_8px_rgba(245,179,1,0.6)]" />
+              <ZendaforgeEmblemIcon className="w-full h-full filter drop-shadow-[0_0_8px_rgba(0,242,254,0.6)]" />
             </div>
-            <span className="text-xs md:text-sm font-extrabold uppercase tracking-widest text-amber-700 dark:text-[#F5B301]">
-              WEB-CRAFT PROJECTS • MODERN SOLUTIONS
+            <span className="text-xs md:text-sm font-extrabold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
+              ZENDAFORGE • MODERN WEB SYSTEMS
             </span>
           </motion.div>
 
@@ -133,7 +133,7 @@ export const Hero = () => {
             </Button>
 
             <a
-              href="https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I%20want%20to%20build%20a%20website%20for%20my%20business"
+              href="https://wa.me/2348142720498?text=Hello%20Zendaforge,%20I%20want%20to%20build%20a%20website%20for%20my%20business"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto"

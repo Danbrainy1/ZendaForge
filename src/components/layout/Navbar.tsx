@@ -74,12 +74,12 @@ export const Navbar = () => {
               <ThemeToggle size="md" />
 
               <a
-                href="https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I%20would%20like%20to%20inquire%20about%20building%20a%20website"
+                href="https://wa.me/2348142720498?text=Hello%20Zendaforge,%20I%20would%20like%20to%20inquire%20about%20building%20a%20website"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-amber-700 dark:text-[#F5B301] bg-amber-500/10 dark:bg-[#F5B301]/10 border border-amber-500/30 dark:border-[#F5B301]/30 rounded-xl hover:bg-amber-500/20 dark:hover:bg-[#F5B301]/20 transition-all hover:scale-105"
+                className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 dark:bg-cyan-500/10 border border-cyan-500/30 dark:border-cyan-500/30 rounded-xl hover:bg-cyan-500/20 dark:hover:bg-cyan-500/20 transition-all hover:scale-105"
               >
-                <MessageSquare size={15} className="text-amber-600 dark:text-[#F5B301]" />
+                <MessageSquare size={15} className="text-cyan-600 dark:text-cyan-400" />
                 <span>+234 814 272 0498</span>
               </a>
 
@@ -154,7 +154,7 @@ export const Navbar = () => {
                   </a>
 
                   <a
-                    href="https://wa.me/2348142720498?text=Hello%20Web-Craft%20Projects,%20I%20would%20like%20to%20inquire%20about%20building%20a%20website"
+                    href="https://wa.me/2348142720498?text=Hello%20Zendaforge,%20I%20would%20like%20to%20inquire%20about%20building%20a%20website"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full py-3 bg-emerald-600 hover:bg-emerald-500 rounded-xl text-white font-semibold text-sm shadow-lg shadow-emerald-950"
