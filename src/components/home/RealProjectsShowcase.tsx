@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { realProjectsList, RealProject } from "@/data/projectsData";
 import { CaseStudiesModal } from "./CaseStudiesModal";
+import { LiveFrameModal } from "@/components/common/LiveFrameModal";
 
 const categoryFilters = [
   { id: "all", label: "All Projects", icon: Globe2 },
@@ -270,70 +271,11 @@ export const RealProjectsShowcase = () => {
         </motion.div>
       </div>
 
-      {/* Interactive Quick Preview Modal - Fully Responsive */}
-      <AnimatePresence>
-        {previewProject && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/85 backdrop-blur-md"
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="relative w-full max-w-5xl h-[92vh] sm:h-[88vh] bg-zinc-950 rounded-2xl sm:rounded-3xl border border-zinc-800 shadow-2xl flex flex-col overflow-hidden"
-            >
-              {/* Modal Top Bar */}
-              <div className="p-3 sm:p-4 bg-zinc-900 border-b border-zinc-800 flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-                  <div className="flex items-center gap-1.5 shrink-0">
-                    <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-red-500/80" />
-                    <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-yellow-500/80" />
-                    <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-green-500/80" />
-                  </div>
-                  <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg bg-zinc-950 border border-zinc-800 text-[11px] sm:text-xs font-mono text-zinc-300 truncate">
-                    <Globe2 size={12} className="text-[#F5B301] shrink-0" />
-                    <span className="truncate">{previewProject.liveUrl}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2 shrink-0">
-                  <a
-                    href={previewProject.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-xl bg-[#F5B301] text-black text-xs font-bold shadow-sm hover:scale-105 transition-all"
-                  >
-                    <span className="hidden sm:inline">Open in New Tab</span>
-                    <span className="sm:hidden">Open</span>
-                    <ExternalLink size={12} />
-                  </a>
-
-                  <button
-                    onClick={() => setPreviewProject(null)}
-                    aria-label="Close modal"
-                    className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white transition-colors"
-                  >
-                    <X size={18} />
-                  </button>
-                </div>
-              </div>
-
-              {/* Iframe Viewport */}
-              <div className="flex-1 bg-white relative">
-                <iframe
-                  src={previewProject.liveUrl}
-                  title={previewProject.title}
-                  className="w-full h-full border-0"
-                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                />
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Interactive Quick Preview Modal - Enhanced Multi-Device Live Frame */}
+      <LiveFrameModal
+        project={previewProject}
+        onClose={() => setPreviewProject(null)}
+      />
 
       {/* Deep Dive Case Studies Modal */}
       <CaseStudiesModal
