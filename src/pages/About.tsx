@@ -139,6 +139,85 @@ const About = () => {
         </div>
       </section>
 
+      {/* Founder & Leadership Spotlight */}
+      <section className="py-20 bg-white dark:bg-[#070709] border-t border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="p-8 sm:p-12 rounded-[2.5rem] bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/80 shadow-xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              {/* Founder Image */}
+              <div className="lg:col-span-4 flex justify-center">
+                <div className="relative group w-full max-w-xs sm:max-w-sm">
+                  <div className="absolute -inset-1 bg-gradient-to-tr from-[#F5B301] to-amber-600 rounded-3xl blur-lg opacity-40 group-hover:opacity-70 transition duration-500" />
+                  <div className="relative rounded-2xl overflow-hidden border-2 border-amber-500/40 bg-zinc-900 shadow-xl">
+                    <img 
+                      src="/founder-profile.jpg" 
+                      alt="Agim Uchechukwu Chigozie Daniel - Founder & CEO" 
+                      className="w-full h-80 sm:h-96 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4 text-white">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#F5B301]">Founder & CEO</span>
+                      <span className="text-lg font-bold">Agim Uchechukwu C. Daniel</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Founder Info */}
+              <div className="lg:col-span-8 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-[#F5B301] border border-amber-500/30 text-xs font-black uppercase tracking-wider">
+                  <Sparkles size={13} />
+                  <span>Executive Leadership</span>
+                </div>
+
+                <h2 className="text-2xl sm:text-4xl font-black text-zinc-900 dark:text-white uppercase tracking-tight">
+                  Guided by Engineering & <span className="text-gold-gradient">Data-Driven Rigor</span>
+                </h2>
+
+                <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                  Zendaforge is founded and led by <strong>Agim Uchechukwu Chigozie Daniel</strong>, a multidisciplinary full-stack software engineer, data analyst, and educator. Currently serving as Head of Training & Development at Circo Digital Academy (governing 20 product teams), Agim combines an academic foundation in Environmental Health Science and Software Engineering with an elite track record of building production web apps, school portals, and 3D WebGL platforms.
+                </p>
+
+                {/* Quick Credentials Chips */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
+                  <div className="p-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                    <div className="text-xs font-black uppercase text-amber-600 dark:text-[#F5B301]">Circo Digital Academy</div>
+                    <div className="text-[11px] text-zinc-500">Head of Training (20 Teams)</div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                    <div className="text-xs font-black uppercase text-amber-600 dark:text-[#F5B301]">Dual University Background</div>
+                    <div className="text-[11px] text-zinc-500">B.Sc. Env Health & B.Sc. SE</div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                    <div className="text-xs font-black uppercase text-amber-600 dark:text-[#F5B301]">Global Accreditations</div>
+                    <div className="text-[11px] text-zinc-500">WHO, UNICEF, WSO HSE 1-3</div>
+                  </div>
+                </div>
+
+                {/* CTA to Founder Page */}
+                <div className="flex flex-wrap items-center gap-4 pt-3">
+                  <Link to="/founder">
+                    <Button className="btn-gold-glow text-xs uppercase font-extrabold tracking-wider px-6 py-5 rounded-xl shadow-md">
+                      <span>Explore Founder Bio & Portfolio</span>
+                      <ArrowRight size={15} className="ml-2" />
+                    </Button>
+                  </Link>
+
+                  <a
+                    href="/assets/aistudio/Agim_Uchechukwu_Chigozie_Newly_edited_CV_5fbc3f15.pdf"
+                    download="Agim_Uchechukwu_Chigozie_CV.pdf"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 hover:text-amber-600 dark:hover:text-[#F5B301] font-bold text-xs uppercase tracking-wider transition-all"
+                  >
+                    <span>Download Founder CV</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Core Values */}
       <section className="py-24 bg-white dark:bg-[#08080A] border-t border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
         <div className="container mx-auto px-4 max-w-7xl">

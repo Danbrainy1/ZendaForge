@@ -9,6 +9,7 @@ import { InteractiveQuoteEstimator } from "@/components/home/InteractiveQuoteEst
 import { WebsiteAuditTool } from "@/components/home/WebsiteAuditTool";
 import { MaintenanceHostingSection } from "@/components/home/MaintenanceHostingSection";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
+import { FounderSpotlight } from "@/components/home/FounderSpotlight";
 import { Testimonials } from "@/components/home/Testimonials";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
@@ -25,6 +26,7 @@ const Index = () => {
       <WebsiteAuditTool />
       <MaintenanceHostingSection />
       <WhyChooseUs />
+      <FounderSpotlight />
       <Testimonials />
       <FinalCTA />
     </Layout>

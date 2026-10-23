@@ -24,6 +24,7 @@ const footerLinks = {
   company: [
     { name: "Home", path: "/" },
     { name: "About Zendaforge", path: "/about" },
+    { name: "Meet the Founder & CEO", path: "/founder" },
     { name: "Our Services", path: "/services" },
     { name: "Portfolio & Case Studies", path: "/portfolio" },
     { name: "Pricing Packages", path: "/pricing" },
