@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { 
   Target, Users, Heart, Eye, Award, 
-  ShieldCheck, Clock, Zap, ArrowRight, MessageSquare 
+  ShieldCheck, Clock, Zap, ArrowRight, MessageSquare, Sparkles 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/common/BrandLogo";
