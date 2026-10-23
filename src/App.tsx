@@ -11,6 +11,9 @@ import Portfolio from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Founder from "./pages/Founder";
+import Technologies from "./pages/Technologies";
+import EducationalConsult from "./pages/EducationalConsult";
+import DataLab from "./pages/DataLab";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +27,13 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            {/* Dedicated Division Pages */}
+            <Route path="/technologies" element={<Technologies />} />
+            <Route path="/educational-consult" element={<EducationalConsult />} />
+            <Route path="/education" element={<EducationalConsult />} />
+            <Route path="/data-lab" element={<DataLab />} />
+            <Route path="/datalab" element={<DataLab />} />
+            {/* Unified Company Pages */}
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/portfolio" element={<Portfolio />} />
@@ -32,7 +42,7 @@ const App = () => (
             <Route path="/founder" element={<Founder />} />
             <Route path="/about/founder" element={<Founder />} />
             <Route path="/ceo" element={<Founder />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            {/* Catch-all */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -25,6 +25,9 @@ export const FounderSpotlight: React.FC = () => {
                     alt="Agim Uchechukwu Chigozie Daniel - Founder & CEO of Zendaforge"
                     className="w-full h-[400px] object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
+                    decoding="async"
+                    width={796}
+                    height={1024}
                   />
                   
                   {/* Photo Bottom Gradient Card */}

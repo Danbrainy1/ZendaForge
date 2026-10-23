@@ -1,286 +1,294 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { 
-  Target, Users, Heart, Eye, Award, 
-  ShieldCheck, Clock, Zap, ArrowRight, MessageSquare, Sparkles 
-} from "lucide-react";
+import { Award, ShieldCheck, Clock, Users, ArrowRight, Laptop, GraduationCap, BarChart3, Sparkles, MessageSquare, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/common/BrandLogo";
-import { Floating3DShapes } from "@/components/3d/Floating3DShapes";
-import { GlowingOrb } from "@/components/3d/GlowingOrb";
+import { BookConsultationModal } from "@/components/common/BookConsultationModal";
+import { BRAND, DIVISIONS } from "@/lib/constants";
 
 const coreValues = [
   {
     icon: Award,
-    title: "Craftsmanship & Code Precision",
-    description: "Every line of TypeScript, UI component, and database query is written with extreme precision to ensure maximum stability and speed.",
+    title: "Engineering Precision",
+    description: "Whether writing distributed backend code or validating complex statistical models, we adhere to verified mathematical and software standards.",
   },
   {
     icon: ShieldCheck,
-    title: "100% Client Satisfaction",
-    description: "We don't settle for mediocre. We collaborate with you iteratively until your website exceeds your grandest expectations.",
+    title: "Institutional Trust & Integrity",
+    description: "From student visa files to enterprise databases, confidentiality and unyielding reliability form the bedrock of our client relationships.",
   },
   {
     icon: Clock,
-    title: "Speed & Execution Reliability",
-    description: "We ship quickly. In today's digital market, speed to launch is your competitive advantage.",
+    title: "Agile & On-Time Execution",
+    description: "We respect milestones and deadlines. We ship production software rapidly and prepare admissions dossiers well before international deadlines.",
   },
   {
     icon: Users,
-    title: "Empowerment & Support",
-    description: "We don't just deliver a website and walk away. We train your staff, integrate WhatsApp lead engines, and provide 24/7 technical backup.",
+    title: "Holistic Empowerment",
+    description: "We don't merely deliver an isolated artifact; we mentor teams, train educators, coach international students, and empower stakeholders to thrive.",
   },
 ];
 
-const About = () => {
+const About: React.FC = () => {
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+
   return (
     <Layout>
       {/* Hero Header */}
-      <section className="pt-36 pb-20 relative overflow-hidden bg-white dark:bg-[#08080A] transition-colors duration-300">
-        <Floating3DShapes />
-        <GlowingOrb size={400} blur={160} opacity={0.18} className="top-10 right-1/4" />
+      <section className="pt-36 pb-20 relative overflow-hidden bg-white dark:bg-navy-950 transition-colors duration-300">
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 via-transparent to-transparent pointer-events-none" />
 
         <div className="container mx-auto px-4 max-w-7xl relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl mx-auto space-y-4"
-          >
-            <span className="text-xs font-black uppercase tracking-[0.25em] text-amber-700 dark:text-[#F5B301] bg-amber-500/10 dark:bg-[#F5B301]/10 px-4 py-1.5 rounded-full border border-amber-500/30 dark:border-[#F5B301]/30">
-              ABOUT ZENDAFORGE PROJECTS
-            </span>
-            
-            <h1 className="text-4xl sm:text-6xl font-black text-zinc-900 dark:text-white uppercase tracking-tight leading-none">
-              WE DESIGN. WE BUILD. <br />
-              <span className="text-gold-gradient">WE EMPOWER.</span>
+          <div className="max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+              <span>Corporate Profile</span>
+            </div>
+
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+              We Design. We Build.{" "}
+              <span className="text-purple-gradient block sm:inline">We Empower.</span>
             </h1>
-            
-            <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto leading-relaxed">
-              We are a premier Nigerian web design & software engineering agency dedicated to transforming businesses, schools, hospitals, and churches into digital powerhouses.
+
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              Zendaforge is a unified corporate group combining enterprise software engineering, global academic advisory, and advanced business intelligence.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Story & Philosophy */}
-      <section className="py-20 bg-slate-50 dark:bg-[#0A0A0D] border-t border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
+      {/* Corporate Structure & Synergy */}
+      <section className="py-20 bg-slate-50 dark:bg-navy-900/40 border-t border-slate-200 dark:border-slate-800">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
-            {/* Story Text */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-black uppercase tracking-widest text-amber-700 dark:text-[#F5B301]">
-                OUR ORIGIN STORY
-              </span>
-              <h2 className="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white uppercase tracking-tight">
-                BRIDGING THE GAP BETWEEN <span className="text-gold-gradient">VISION & EXECUTION</span>
+              <div className="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">
+                Our Genesis & Structure
+              </div>
+
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                An Ecosystem Designed to Bridge Digital, Academic, and Analytical Frontiers
               </h2>
-              
-              <div className="space-y-4 text-zinc-600 dark:text-zinc-300 text-sm md:text-base leading-relaxed">
+
+              <div className="space-y-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
                 <p>
-                  Zendaforge was established with a singular mission: to eliminate the frustrating gap between expensive, slow web agencies and sub-standard amateur websites.
+                  Zendaforge was established to eliminate the traditional divide between technical builders, academic advisors, and quantitative researchers. We recognized that true organizational growth requires high-performance software, educated human capital, and rigorous data insights.
                 </p>
                 <p>
-                  We recognized that Nigerian businesses, private schools, medical centers, and growing enterprises needed cutting-edge, world-class web infrastructure without inflated corporate overheads.
-                </p>
-                <p>
-                  By marrying futuristic 3D aesthetics, robust full-stack engineering, and seamless local payment gateways like Paystack & Flutterwave, we empower brands to dominate their industries and attract international clientele.
+                  Today, Zendaforge operates through three specialized yet tightly collaborative pillars:
                 </p>
               </div>
 
-              {/* Slogan Pill */}
-              <div className="p-4 rounded-2xl bg-white dark:bg-zinc-900 border border-amber-500/30 dark:border-[#F5B301]/40 flex items-center gap-3 shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-[#F5B301] text-black flex items-center justify-center font-black text-xs shrink-0 shadow-sm">
-                  WC
-                </div>
-                <div className="text-xs font-extrabold uppercase tracking-wider text-zinc-900 dark:text-white">
-                  <span className="text-amber-600 dark:text-[#F5B301]">YOUR BUSINESS.</span> OUR CODE. <span className="text-amber-600 dark:text-[#F5B301]">ENDLESS POSSIBILITIES.</span>
-                </div>
+              {/* 3 Pillars in About */}
+              <div className="space-y-3 pt-2">
+                <Link
+                  to="/technologies"
+                  className="flex items-start gap-3 p-3.5 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/40 transition-colors group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-600 flex items-center justify-center shrink-0 mt-0.5">
+                    <Laptop size={16} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-purple-600 transition-colors">
+                      Zendaforge Technologies
+                    </h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      Bespoke web applications, institutional portals, high-conversion e-commerce, and cloud DevOps.
+                    </p>
+                  </div>
+                </Link>
+
+                <Link
+                  to="/educational-consult"
+                  className="flex items-start gap-3 p-3.5 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500/40 transition-colors group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
+                    <GraduationCap size={16} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">
+                      Zendaforge Educational Consult
+                    </h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      Global study abroad placement (UK, US, Canada, Europe), scholarship mentoring, and STEM bootcamps.
+                    </p>
+                  </div>
+                </Link>
+
+                <Link
+                  to="/data-lab"
+                  className="flex items-start gap-3 p-3.5 rounded-xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-600 flex items-center justify-center shrink-0 mt-0.5">
+                    <BarChart3 size={16} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 transition-colors">
+                      Zendaforge Data Lab
+                    </h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      Executive BI dashboards, predictive modeling, machine learning prototyping, and thesis research statistical analysis.
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
 
-            {/* 3D Visual Metric Card */}
+            {/* Corporate Metric Card */}
             <div className="lg:col-span-5">
-              <div className="p-8 rounded-3xl bg-white dark:bg-zinc-950 border-2 border-amber-500/30 dark:border-[#F5B301]/40 shadow-xl dark:shadow-[0_25px_60px_rgba(245,179,1,0.25)] space-y-6">
-                <div className="text-center pb-4 border-b border-zinc-200 dark:border-zinc-800">
-                  <div className="text-6xl font-black text-amber-600 dark:text-gold-gradient font-mono">100+</div>
-                  <div className="text-xs font-black uppercase tracking-widest text-zinc-500 dark:text-zinc-400 mt-1">High-Impact Websites Deployed</div>
+              <div className="p-8 rounded-3xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+                <div className="text-center pb-4 border-b border-slate-100 dark:border-slate-800">
+                  <div className="text-5xl font-black text-purple-600 dark:text-purple-400 tabular-nums">3 Divisions</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mt-1">Unified Under Zendaforge Group</div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 text-center">
-                  <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-                    <div className="text-2xl font-black text-zinc-900 dark:text-white font-mono">100%</div>
-                    <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-bold uppercase mt-1">Client Satisfaction</div>
+                  <div className="p-4 rounded-xl bg-slate-50 dark:bg-navy-950 border border-slate-200 dark:border-slate-800">
+                    <div className="text-2xl font-bold text-slate-900 dark:text-white tabular-nums">50+</div>
+                    <div className="text-[10px] text-slate-500 font-semibold uppercase mt-0.5">Software Deployments</div>
                   </div>
-                  <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-                    <div className="text-2xl font-black text-zinc-900 dark:text-white font-mono">&lt; 7 Days</div>
-                    <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-bold uppercase mt-1">Avg. Launch Time</div>
+                  <div className="p-4 rounded-xl bg-slate-50 dark:bg-navy-950 border border-slate-200 dark:border-slate-800">
+                    <div className="text-2xl font-bold text-slate-900 dark:text-white tabular-nums">150+</div>
+                    <div className="text-[10px] text-slate-500 font-semibold uppercase mt-0.5">Students Placed</div>
                   </div>
-                  <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-                    <div className="text-2xl font-black text-zinc-900 dark:text-white font-mono">99.9%</div>
-                    <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-bold uppercase mt-1">Platform Uptime</div>
+                  <div className="p-4 rounded-xl bg-slate-50 dark:bg-navy-950 border border-slate-200 dark:border-slate-800">
+                    <div className="text-2xl font-bold text-slate-900 dark:text-white tabular-nums">1.2M+</div>
+                    <div className="text-[10px] text-slate-500 font-semibold uppercase mt-0.5">Data Points Modeled</div>
                   </div>
-                  <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-                    <div className="text-2xl font-black text-zinc-900 dark:text-white font-mono">24/7</div>
-                    <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-bold uppercase mt-1">Ongoing Support</div>
+                  <div className="p-4 rounded-xl bg-slate-50 dark:bg-navy-950 border border-slate-200 dark:border-slate-800">
+                    <div className="text-2xl font-bold text-slate-900 dark:text-white tabular-nums">99.9%</div>
+                    <div className="text-[10px] text-slate-500 font-semibold uppercase mt-0.5">Uptime SLA</div>
                   </div>
                 </div>
 
-                <Link to="/contact">
-                  <Button className="w-full btn-gold-glow py-6 text-xs uppercase font-extrabold tracking-wider rounded-xl shadow-lg">
-                    Partner With Us Today
-                  </Button>
-                </Link>
+                <Button
+                  onClick={() => setIsConsultationOpen(true)}
+                  className="w-full btn-purple-glow py-3 rounded-xl text-sm font-semibold"
+                >
+                  Partner With Zendaforge
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Founder & Leadership Spotlight */}
-      <section className="py-20 bg-white dark:bg-[#070709] border-t border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
+      {/* Leadership & Founder Spotlight */}
+      <section className="py-20 bg-white dark:bg-navy-950 border-t border-slate-200 dark:border-slate-800">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="p-8 sm:p-12 rounded-[2.5rem] bg-slate-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/80 shadow-xl">
+          <div className="p-8 sm:p-12 rounded-3xl bg-slate-50 dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-md">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              
               {/* Founder Image */}
               <div className="lg:col-span-4 flex justify-center">
-                <div className="relative group w-full max-w-xs sm:max-w-sm">
-                  <div className="absolute -inset-1 bg-gradient-to-tr from-[#F5B301] to-amber-600 rounded-3xl blur-lg opacity-40 group-hover:opacity-70 transition duration-500" />
-                  <div className="relative rounded-2xl overflow-hidden border-2 border-amber-500/40 bg-zinc-900 shadow-xl">
+                <div className="relative group w-full max-w-xs">
+                  <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-900 shadow-lg">
                     <img 
                       src="/founder-profile.jpg" 
                       alt="Agim Uchechukwu Chigozie Daniel - Founder & CEO" 
-                      className="w-full h-80 sm:h-96 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-80 sm:h-96 object-cover object-top"
+                      loading="lazy"
+                      decoding="async"
+                      width={796}
+                      height={1024}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4 text-white">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-[#F5B301]">Founder & CEO</span>
-                      <span className="text-lg font-bold">Agim Uchechukwu C. Daniel</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent flex flex-col justify-end p-4 text-white">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-purple-300">Founder & CEO</span>
+                      <span className="text-base font-bold">Agim Uchechukwu C. Daniel</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Founder Info */}
-              <div className="lg:col-span-8 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-[#F5B301] border border-amber-500/30 text-xs font-black uppercase tracking-wider">
+              <div className="lg:col-span-8 space-y-4">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 text-xs font-semibold">
                   <Sparkles size={13} />
                   <span>Executive Leadership</span>
                 </div>
 
-                <h2 className="text-2xl sm:text-4xl font-black text-zinc-900 dark:text-white uppercase tracking-tight">
-                  Guided by Engineering & <span className="text-gold-gradient">Data-Driven Rigor</span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                  Guided by Engineering, Academic & Data-Driven Rigor
                 </h2>
 
-                <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                  Zendaforge is founded and led by <strong>Agim Uchechukwu Chigozie Daniel</strong>, a multidisciplinary full-stack software engineer, data analyst, and educator. Currently serving as Head of Training & Development at Circo Digital Academy (governing 20 product teams), Agim combines an academic foundation in Environmental Health Science and Software Engineering with an elite track record of building production web apps, school portals, and 3D WebGL platforms.
+                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Zendaforge is founded and steered by <strong>Agim Uchechukwu Chigozie Daniel</strong>, a multidisciplinary software engineer, data analyst, and educator. Currently serving as Head of Training & Development at Circo Digital Academy (governing 20 product engineering teams), Agim unites an academic foundation in Environmental Health Science and Software Engineering with a proven track record of architecting production software, academic portals, and predictive analytics pipelines.
                 </p>
 
-                {/* Quick Credentials Chips */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
-                  <div className="p-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-                    <div className="text-xs font-black uppercase text-amber-600 dark:text-[#F5B301]">Circo Digital Academy</div>
-                    <div className="text-[11px] text-zinc-500">Head of Training (20 Teams)</div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                  <div className="p-3 rounded-xl bg-white dark:bg-navy-950 border border-slate-200 dark:border-slate-800">
+                    <div className="text-xs font-bold text-purple-600 dark:text-purple-400">Circo Digital Academy</div>
+                    <div className="text-[11px] text-slate-500">Head of Training (20 Teams)</div>
                   </div>
-                  <div className="p-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-                    <div className="text-xs font-black uppercase text-amber-600 dark:text-[#F5B301]">Dual University Background</div>
-                    <div className="text-[11px] text-zinc-500">B.Sc. Env Health & B.Sc. SE</div>
+                  <div className="p-3 rounded-xl bg-white dark:bg-navy-950 border border-slate-200 dark:border-slate-800">
+                    <div className="text-xs font-bold text-purple-600 dark:text-purple-400">Dual Degree Academic</div>
+                    <div className="text-[11px] text-slate-500">B.Sc. Env Health & B.Sc. SE</div>
                   </div>
-                  <div className="p-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-                    <div className="text-xs font-black uppercase text-amber-600 dark:text-[#F5B301]">Global Accreditations</div>
-                    <div className="text-[11px] text-zinc-500">WHO, UNICEF, WSO HSE 1-3</div>
+                  <div className="p-3 rounded-xl bg-white dark:bg-navy-950 border border-slate-200 dark:border-slate-800">
+                    <div className="text-xs font-bold text-purple-600 dark:text-purple-400">Global Accreditations</div>
+                    <div className="text-[11px] text-slate-500">WHO, UNICEF, WSO HSE 1-3</div>
                   </div>
                 </div>
 
-                {/* CTA to Founder Page */}
-                <div className="flex flex-wrap items-center gap-4 pt-3">
+                <div className="flex flex-wrap items-center gap-3 pt-3">
                   <Link to="/founder">
-                    <Button className="btn-gold-glow text-xs uppercase font-extrabold tracking-wider px-6 py-5 rounded-xl shadow-md">
-                      <span>Explore Founder Bio & Portfolio</span>
-                      <ArrowRight size={15} className="ml-2" />
+                    <Button className="btn-purple-glow text-xs font-semibold px-5 py-2.5 rounded-xl">
+                      <span>View Detailed Executive Bio</span>
+                      <ArrowRight size={14} className="ml-2" />
                     </Button>
                   </Link>
 
                   <a
                     href="/assets/aistudio/Agim_Uchechukwu_Chigozie_Newly_edited_CV_5fbc3f15.pdf"
                     download="Agim_Uchechukwu_Chigozie_CV.pdf"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 hover:text-amber-600 dark:hover:text-[#F5B301] font-bold text-xs uppercase tracking-wider transition-all"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                   >
+                    <Download size={14} />
                     <span>Download Founder CV</span>
                   </a>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Values */}
-      <section className="py-24 bg-white dark:bg-[#08080A] border-t border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
+      {/* Guiding Principles */}
+      <section className="py-20 bg-slate-50 dark:bg-navy-900/40 border-t border-slate-200 dark:border-slate-800">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-black uppercase tracking-[0.25em] text-amber-700 dark:text-[#F5B301] bg-amber-500/10 dark:bg-[#F5B301]/10 px-4 py-1.5 rounded-full border border-amber-500/30 dark:border-[#F5B301]/30">
-              OUR GUIDING PILLARS
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white uppercase tracking-tight mt-4">
-              WHAT DEFINES <span className="text-gold-gradient">ZENDAFORGE</span>
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 mb-2">
+              Guiding Principles
             </h2>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+              The Values That Drive Every Zendaforge Engagement
+            </h3>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreValues.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 rounded-3xl bg-zinc-50 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 hover:border-amber-500/60 dark:hover:border-[#F5B301]/60 transition-all space-y-4 group shadow-sm hover:shadow-md"
+              <div
+                key={index}
+                className="p-6 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3"
               >
-                <div className="w-14 h-14 rounded-2xl bg-amber-500/10 dark:bg-[#F5B301]/10 border border-amber-500/30 dark:border-[#F5B301]/30 flex items-center justify-center text-amber-600 dark:text-[#F5B301] group-hover:bg-[#F5B301] group-hover:text-black transition-all">
-                  <value.icon size={26} />
+                <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+                  <value.icon size={20} />
                 </div>
-                <h3 className="text-lg font-black text-zinc-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-[#F5B301] transition-colors">{value.title}</h3>
-                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">{value.description}</p>
-              </motion.div>
+                <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  {value.title}
+                </h4>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Direct WhatsApp Callout */}
-      <section className="py-20 bg-slate-50 dark:bg-[#0B0B0E] border-t border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
-        <div className="container mx-auto px-4 max-w-4xl text-center space-y-6">
-          <BrandLogo size="md" showTagline={true} className="justify-center" />
-          <h3 className="text-2xl md:text-4xl font-black text-zinc-900 dark:text-white uppercase">
-            Ready to Take Your Business to the <span className="text-amber-600 dark:text-[#F5B301]">Next Level?</span>
-          </h3>
-          <p className="text-zinc-600 dark:text-zinc-400 text-sm md:text-base max-w-xl mx-auto">
-            Contact our lead engineering team today. We'll outline a full roadmap and build a website tailored to your goals.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <Link to="/contact">
-              <Button className="btn-gold-glow text-xs uppercase font-extrabold tracking-wider px-8 py-6 rounded-2xl shadow-lg">
-                Get a Free Consultation
-                <ArrowRight size={16} className="ml-2" />
-              </Button>
-            </Link>
-            <a
-              href="https://wa.me/2348142720498?text=Hello%20Zendaforge%20Projects,%20I%20would%20like%20to%20learn%20more%20about%20your%20services"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="outline" className="border-zinc-300 dark:border-zinc-700 bg-white dark:bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-900 dark:text-white font-bold text-xs uppercase tracking-wider px-6 py-6 rounded-2xl flex items-center gap-2 shadow-sm">
-                <MessageSquare size={16} className="text-amber-600 dark:text-[#F5B301]" />
-                <span>+234 814 272 0498</span>
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+      <BookConsultationModal
+        isOpen={isConsultationOpen}
+        onClose={() => setIsConsultationOpen(false)}
+      />
     </Layout>
   );
 };
